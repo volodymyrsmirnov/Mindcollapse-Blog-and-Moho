@@ -1,16 +1,16 @@
-mindcollapse.com 
+Mindcollapse.com blog and MOHO sources 
 =============
 
-##### Django code and static files for <http://www.mindcollapse.com/> and <http://www.mindcollapse.com/moho/>.
+##### Django code and static files for <http://www.mindcollapse.com/> and <http://www.mindcollapse.com/moho/>
 
 Requirements
 ------------
 
-* Python > 2.3 (developed and tested on 2.7).
-* Django 1.3.
-* We use [Gunicorn WSGI Server](http://gunicorn.org/) and [Supervisord PCS](http://supervisord.org/).
-* PostgreSQL or MySQL with version supported by Django.
-* Nginx for serving static, you can find config example below.
+* Python > 2.3 (developed and tested on 2.7)
+* Django 1.3.*
+* We use [Gunicorn WSGI Server](http://gunicorn.org/) and [Supervisord PCS](http://supervisord.org/)
+* PostgreSQL or MySQL with version supported by Django
+* Nginx for serving static, you can find config example below
 
 Nginx config example
 --------------------
