@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for review in reviews%}
+	<url>
+		<loc>http://www.mindcollapse.com/moho/id/{{review.id}}</loc>
+		<lastmod>{{review.createdAt|date:"Y-m-d"}}</lastmod>
+	</url>
+{% endfor %}
+</urlset> 

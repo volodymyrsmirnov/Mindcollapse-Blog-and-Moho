@@ -1,0 +1,18 @@
+.mohos-moho.change-form #id_title {
+	padding: 5px;
+	width: 686px;
+}
+
+.mohos-moho.change-form label[for=id_text] {
+	display: none;
+}
+
+.blogs-post.change-form #id_title {
+	padding: 5px;
+	width: 787px;
+}
+                
+.blogs-post.change-form label[for=id_text] {
+	display: none;
+}
+        

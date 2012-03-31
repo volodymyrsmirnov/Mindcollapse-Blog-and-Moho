@@ -1,0 +1,21 @@
+User-agent: *
+
+Host: www.mindcollapse.com
+Crawl-delay: 0.5
+
+Allow: /
+
+Disallow: /godmode/
+Disallow: /blog/page/
+Disallow: /blog/tag/
+
+Disallow: /moho/like/
+Disallow: /moho/dislike/
+Disallow: /moho/year/
+Disallow: /moho/actor/
+Disallow: /moho/director/
+Disallow: /moho/genre/
+Disallow: /moho/ajax/
+
+Sitemap: http://www.mindcollapse.com/moho/sitemap.xml
+Sitemap: http://www.mindcollapse.com/blog/sitemap.xml

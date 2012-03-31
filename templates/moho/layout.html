@@ -1,0 +1,70 @@
+<!doctype html>
+{% spaceless %}
+<html lang="ru">
+{% load moho_extras %}
+<head>
+
+	<title>{{title|default:"My Own Humbe Opinion: краткие обзоры фильмов"}}</title> 
+	 
+	<meta charset="UTF-8"/> 
+	<meta name="viewport" content="width=1000"/> 
+	<meta name="robots" content="index, follow"/> 
+
+	<meta name="google-site-verification" content="jm8IGIWg4dsm0cTmih0sIVnUaWibc_hpOiQOlqb--9Y"/> 
+	<meta name='yandex-verification' content='4b85f46617ab1114'/> 
+	<meta name="y_key" content="04bed234d6a405cc"/> 
+	<meta name="msvalidate.01" content="62188F55275960794DDFA698C3EA9F05"/>
+
+    {% if og_post %}
+
+    <meta property="og:title" content="Обзор фильма {{og_post.title}}"/>
+    <meta property="og:description" content="{{og_post.text|striptags|truncatewords:50}}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content="http://www.mindcollapse.com/media/{{og_post.imageURL}}"/>
+    <meta property="fb:admins" content="1405335117"/>
+    <meta property="og:site_name" content="My Own Humbe Opinion: краткие обзоры фильмов"/>
+    <meta property="og:url" content="http://www.mindcollapse.com{% url mohos.views.id id=og_post.id %}"/>
+
+    {% endif %}
+
+    <link rel="author" href="https://plus.google.com/110904145311662435301" rel="me"/>
+	<link rel="icon" href="//www.mindcollapse.com/favicon.ico" type="image/vnd.microsoft.icon"/>
+	<link rel="apple-touch-icon" href="//www.mindcollapse.com/apple-touch-icon.png"/>
+	<link rel="stylesheet" type="text/css" href="//www.mindcollapse.com/moho/main.css"/>
+	<link rel="alternate" type="application/rss+xml" title="RSS лента MOHO" href="http://www.mindcollapse.com{% url mohos.views.rss %}"/>
+	<link rel="alternate" type="application/rss+xml" title="RSS лента mindcollapse.com" href="http://www.mindcollapse.com{% url blogs.views.rss %}"/> 
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="//www.mindcollapse.com/moho/main.js"></script>
+
+	<script type="text/javascript">var totalReviews = {{mohosTotalCount}}, positiveReviews = {{mohosLikeCount}}, negativeReviews = {{mohosDislikeCount}}, scrollPage = 1, scrollCount = {{scrollCount}}-7, ajaxType = '{{ajaxType|safe}}', disableAJAX = {{disableAJAX|default:"false"}};</script>
+	
+	<!--[if lt IE 9 ]>
+		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]--> 
+
+</head>
+
+<body>
+
+	<div id="root"> 
+	
+		<div id="header">
+			<h1>MOHO</h1>&nbsp;<h2>MY OWN<br/>HUMBLE<br/>OPINION</h2>&nbsp;<h3>MOHO - независимый филиал блога <a href='{% url blogs.views.index %}'>mindcollapse.com</a>, где я и мое alter ego, находяcь в трезвом уме и доброй памяти, будут публиковать короткие обзоры просмотренных фильмов, давая им субъективную, но справедливую оценку. <br/> <br/>Бесит минимализм? Будь мужиком. Подпишись на <a id='rss' href='{% url mohos.views.rss %}'>RSS</a> </h3>
+		</div>
+		
+		<div id="nav">
+			<span><a href='{% url mohos.views.index %}'>Всего рецензий</a><br/>{{mohosTotalCount}}</span> <span><a href='{% url mohos.views.attitude attitude="like" %}'>Положительных</a><br/>{{mohosLikeCount}} &mdash; {{ mohosLikeCount|percentage:mohosTotalCount }}</span> <span><a href='{% url mohos.views.attitude attitude="dislike" %}'>Отрицательных</a><br/>{{ mohosDislikeCount}} &mdash; {{ mohosDislikeCount|percentage:mohosTotalCount }}</span>
+		</div>
+		
+		<div id='reviews'>{% block reviews %}{% endblock %}</div>
+		
+		<div id='loading'><img src='/moho/loading.gif'/></div> 
+		
+		<div id="footer"><a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangosite80x15.gif" border="0" alt="A Django site." title="A Django site." /></a>&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a></div>
+		
+	</div>
+</body>
+</html>
+{% endspaceless %}

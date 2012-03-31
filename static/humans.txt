@@ -1,0 +1,14 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Author: Vladimir Smirnoff
+  Site: http://www.mindcollapse.com/
+  Twitter: http://www.twitter.com/middlesizetit
+  Location: Ukraine, Kiev
+
+/* SITE */
+  Standards: HTML5, CSS3, Chrome IE Frame
+  Components: jQuery
+  Software: Python, Django, PostgreSQL, NGINX, Debian.

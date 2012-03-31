@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+	<channel> 
+		<title>Блог mindcollapse.com</title>
+		<link>http://www.mindcollapse.com/blog/</link>
+		<description>Технологический блог о работе и мудаках</description>
+		<language>ru-ru</language> 
+		<lastBuildDate>{% now "r" %}</lastBuildDate>
+		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+		{% for post in posts%}
+		<item>
+			<title><![CDATA[{{post.title|safe}}]]></title>
+			<link>http://www.mindcollapse.com/blog/{{post.id}}.html</link>
+			<guid>http://www.mindcollapse.com/blog/{{post.id}}.html</guid>
+			<description>
+				<![CDATA[<div>{{post.text|safe}}</div>]]>
+			</description>
+			<pubDate>{{post.createdAt|date:"r"}}</pubDate>
+		</item>
+		{% endfor %}
+	</channel> 
+</rss>

@@ -1,0 +1,76 @@
+<!doctype html>
+{% spaceless %}
+<html lang="ru" itemscope itemtype="http://schema.org/Blog">
+
+<head>
+
+	<title>{{title|default:"Блог @ mindcollapse.com"}}</title> 
+
+	<meta charset="UTF-8"/> 
+	<meta name="viewport" content="width=1100"/> 
+	<meta name="robots" content="index, follow"/> 
+	
+	<meta name="google-site-verification" content="jm8IGIWg4dsm0cTmih0sIVnUaWibc_hpOiQOlqb--9Y"/> 
+	<meta name='yandex-verification' content='4b85f46617ab1114'/> 
+	<meta name="y_key" content="04bed234d6a405cc"/> 
+	<meta name="msvalidate.01" content="62188F55275960794DDFA698C3EA9F05"/>
+
+    {% if og_post %}
+
+    <meta property="og:title" content="Блог @ mindcollapse.com: {{og_post.title}}"/>
+    <meta property="og:description" content="{{og_post.text|striptags|truncatewords:50}}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="fb:admins" content="1405335117"/>
+    <meta property="og:site_name" content="Блог @ mindcollapse.com"/>
+    <meta property="og:url" content="http://www.mindcollapse.com{% url blogs.views.id id=og_post.id %}"/>
+
+    {% endif %}
+
+	<link rel="author" href="https://plus.google.com/110904145311662435301" rel="me"/>
+	<link rel="icon" href="//www.mindcollapse.com/favicon.ico" type="image/vnd.microsoft.icon"/>
+	<link rel="apple-touch-icon" href="//www.mindcollapse.com/apple-touch-icon.png"/>
+	<link rel="stylesheet" type="text/css" href="//www.mindcollapse.com/blog/main.css"/>
+	<link rel="alternate" type="application/rss+xml" title="RSS лента mindcollapse.com" href="http://www.mindcollapse.com{% url blogs.views.rss %}"/> 
+	<link rel="alternate" type="application/rss+xml" title="RSS лента MOHO" href="//www.mindcollapse.com{% url mohos.views.rss %}"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="//www.mindcollapse.com/blog/main.js"></script>
+    <script type="text/javascript" src="//apis.google.com/js/plusone.js" charset="utf-8"></script>
+
+	<!--[if lt IE 9 ]>
+		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]--> 
+	
+</head>
+
+<body>
+
+	<div id="root"> 
+	
+		<div id='header'>
+		
+			<div id="headerTop">
+			
+				<a href='{% url blogs.views.index %}'>mindcollapse.com</a> 
+				
+				<span id='socialCrap'><a title='Follow middlesizetit on Twitter' href="http://www.twitter.com/middlesizetit"><img style='border:0;' src="//www.mindcollapse.com/blog/icons/twitter.png" alt="Follow middlesizetit on Twitter"/></a>&nbsp;<a title='My Profile on Google Plus' href="https://plus.google.com/110904145311662435301?rel=author"><img style='border:0;' src="//www.mindcollapse.com/blog/icons/gplus.png" alt="Read my Google Plus"/></a>&nbsp;<a title='Feed my RSS' href="{% url blogs.views.rss %}"><img style='border:0;' src="//www.mindcollapse.com/blog/icons/rss.png" alt="Feed my RSS"/></a></span>
+				
+			</div>
+			
+			<div id="whoami">Я &mdash; специалист в сфере highload сервисов и облачных вычислений. В настоящее время работаю над проектированием и поддержкой кластеров render farm для Cinema 4D. В своем уютном бложике стараюсь писать о работе, об отдыхе и о мудаках. О последних, правда, писать не стараюсь, но как-то само по себе получается.<p>Связаться со мной можно, черканув пару строк на <a href='mailto:mail@mindcollapse.com'>mail@mindcollapse.com</a> или же в <a href="skype:orl-light?chat">skype: orl-light</a></p></div>
+			
+			<div id="mohoRandom">{% for moho in randomMohos %}<a title="Обзор фильма {{moho.title}} ({{moho.year}})" href='{% url mohos.views.id id=moho.id %}'><div class='film' style='background-image:url(//www.mindcollapse.com/media/{{moho.imageURL}})'></div></a>{% endfor %}</div>
+			
+		</div>
+		
+		<div id='posts'>{% block posts %}{% endblock %}</div>
+		
+		<div id='footer'><a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangosite80x15.gif" alt="A Django site." title="A Django site." /></a>&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Лицензия Creative Commons" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a></div>
+		
+	</div>
+	
+</body>
+
+</html>
+{% endspaceless %}
