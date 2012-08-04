@@ -4,6 +4,9 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.paginator import Paginator
 
+from django.http import Http404
+
+
 from blogs.models import Post
 from mohos.models import Moho
 
@@ -25,7 +28,7 @@ def id(request, id):
         template_vars['title'] = template_vars['posts'][0].title + ' @ mindcollapse.com'
         return render_to_response('blog/posts.html', pumpTemplate(template_vars), context_instance=RequestContext(request))
     except:
-        return HttpResponseNotFound()
+        raise Http404
 
 def tag(request, tag, page=1):
 	template_vars = {}
@@ -41,7 +44,7 @@ def tag(request, tag, page=1):
 		template_vars['page'] = page
 		
 	except:
-		return HttpResponseNotFound()
+		raise Http404
 
 	return render_to_response('blog/posts.html', pumpTemplate(template_vars), context_instance=RequestContext(request))
 
@@ -58,7 +61,7 @@ def index(request, page=1):
 		template_vars['page'] = page
 		
 	except:
-		return HttpResponseNotFound()
+		raise Http404
 	return render_to_response('blog/posts.html', pumpTemplate(template_vars), context_instance=RequestContext(request))	
 	
 
