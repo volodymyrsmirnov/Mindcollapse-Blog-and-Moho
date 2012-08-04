@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
+from django.http import Http404
+
 from mohos.models import Moho
 
 def index(request):
@@ -21,7 +23,7 @@ def genre(request,genre):
 	else: template_vars['ajaxType'] = 'genre&genre=' + genre
 	
 	template_vars['reviews'] = Moho.objects.filter(visible=True, genres__slug=genre).order_by('-id')[:7]
-	if template_vars['reviews'].count() == 0: return HttpResponseNotFound()
+	if template_vars['reviews'].count() == 0: raise Http404
 	else: 
 		template_vars['title'] = u"Фильмы жанра " + genre.title() + " : My Own Humble Opinion"
 		return render_to_response('moho/reviews.html', pumpTemplate(template_vars), context_instance=RequestContext(request))
@@ -35,7 +37,7 @@ def actor(request,actor):
 	else: template_vars['ajaxType'] = 'actor&actor=' + actor
 	
 	template_vars['reviews'] = Moho.objects.filter(visible=True, actors__slug=actor).order_by('-id')[:7]
-	if template_vars['reviews'].count() == 0: return HttpResponseNotFound()
+	if template_vars['reviews'].count() == 0: raise Http404
 	else: 
 		template_vars['title'] = u"Фильмы с участием " + actor.title() + " : My Own Humble Opinion"
 		return render_to_response('moho/reviews.html', pumpTemplate(template_vars), context_instance=RequestContext(request))
@@ -49,7 +51,7 @@ def director(request,director):
 	else: template_vars['ajaxType'] = 'director&director=' + director
 	
 	template_vars['reviews'] = Moho.objects.filter(visible=True, directors__slug=director).order_by('-id')[:7]
-	if template_vars['reviews'].count() == 0: return HttpResponseNotFound()
+	if template_vars['reviews'].count() == 0: raise Http404
 	else: 
 		template_vars['title'] = u"Фильмы, снятые " + director.title() + " : My Own Humble Opinion"
 		return render_to_response('moho/reviews.html', pumpTemplate(template_vars), context_instance=RequestContext(request))
@@ -91,10 +93,10 @@ def ajax(request):
 	elif request.REQUEST['type'] ==  'actor':	
 		template_vars['reviews'] = Moho.objects.filter(visible=True, actors__slug=request.REQUEST['actor']).order_by('-id')[startFrom:endWith]
 	else: 
-		return HttpResponseNotFound()
+		raise Http404
 	
 	if template_vars['reviews'].count() == 0: 
-		return HttpResponseNotFound()
+		raise Http404
 	else: 
 		return render_to_response('moho/items.html', template_vars, context_instance=RequestContext(request))
 
@@ -125,7 +127,7 @@ def year(request, year):
 	else: template_vars['ajaxType'] = 'year&year=' + year
 	
 	template_vars['reviews'] = Moho.objects.filter(visible=True, year=year).order_by('-id')[:7]
-	if template_vars['reviews'].count() == 0: return HttpResponseNotFound()
+	if template_vars['reviews'].count() == 0: raise Http404
 	else: 
 		template_vars['title'] = u"Фильмы, снятые в " + year + u" году : My Own Humble Opinion"
 		return render_to_response('moho/reviews.html', pumpTemplate(template_vars), context_instance=RequestContext(request))
@@ -133,7 +135,7 @@ def year(request, year):
 def id(request, id):
     template_vars = {'disableAJAX':'true'}
     template_vars['reviews'] = Moho.objects.filter(visible=True, id=id)[:1]
-    if template_vars['reviews'].count() == 0: return HttpResponseNotFound()
+    if template_vars['reviews'].count() == 0: raise Http404
     else:
         template_vars['enable_similar'] = True
         template_vars['og_post'] = template_vars['reviews'][0]
