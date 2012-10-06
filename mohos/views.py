@@ -2,44 +2,9 @@
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.contrib.auth.decorators import user_passes_test
-from django.conf import settings
-
 from django.http import Http404
 
 from mohos.models import Moho
-
-from json import dumps
-
-# GODMODE hacks
-@user_passes_test(lambda u: u.is_superuser())
-def upload_file(request):
-	upload_destination = settings.MEDIA_ROOT + "blog_uploads/"
-
-	if len(request.FILES) == 0:
-		return HttpResponseNotFound('nothing to upload')
-
-	try:
-		file_for_upload = request.FILES['file']
-	except:
-		return HttpResponseNotFound('nothing to upload')
-
-	upload_destination = upload_destination + str(file_for_upload.size) +'_' + file_for_upload.name
-	destination_file = open(upload_destination, 'w')
-
-	if file_for_upload.multiple_chunks:
-		for chunk in file_for_upload.chunks():
-			destination_file.write(chunk)
-	else:
-		destination_file.write(file_for_upload.read())
-
-	destination_file.close()
-
-	return dumps({'filelink':upload_destination})
-
-@user_passes_test(lambda u: u.is_superuser())
-def autosave_post(request):
-	return ''
 
 def index(request):
 	template_vars = {'ajaxType':'main'}
