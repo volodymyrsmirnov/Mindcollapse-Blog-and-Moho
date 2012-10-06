@@ -4,21 +4,15 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import user_passes_test
-from django.template.loader import render_to_string
+from django.core.urlresolvers import reverse
 from django.conf import settings
 
 from django.http import Http404
-
 
 from blogs.models import Post
 from mohos.models import Moho
 
 from json import dumps
-
-from fpdf import FPDF, HTMLMixin
-
-class MyFPDF(FPDF, HTMLMixin):
-    pass
 
 # GODMODE hacks
 @user_passes_test(lambda u: u.is_superuser)
@@ -79,15 +73,8 @@ def id(request, id):
 def id_pdf(request, id):
 	template_vars = {}
 	try:
-		template_vars['posts'] = [Post.objects.get(id=id)]
-		post_html = render_to_string("blog/posts.pdf.html", template_vars)
-		
-		pdf = MyFPDF()
-		pdf.add_page()
-		pdf.write_html(html)
-		post_pdf = pdf.output('','S')
-
-		return HttpResponse(post_pdf, mimetype='application/pdf')
+		Post.objects.get(id=id)
+		return HttpResponsePermanentRedirect("https://api.joliprint.com/api/rest/url/print?url=http://www.mindcollapse.com%s" % reverse('blogs.views.id', None, [str(id)]))
 	except:
 		raise Http404
 
