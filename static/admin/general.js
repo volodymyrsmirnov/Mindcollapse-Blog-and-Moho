@@ -6,11 +6,14 @@ $(function(){
 		fixed: true
 	}); 
 
+	/* dont need any WYSIWYG in MOHO, disable it 
 	$('.mohos-moho.change-form #id_text').redactor({ 
 		minHeight: 300,
 		wym: true,
 		fixedBox: true,
 		fixed: true
 	}); 
+
+	*/
 
 });
