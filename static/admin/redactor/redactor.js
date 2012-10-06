@@ -1597,7 +1597,7 @@ var RLANG = {
 				$.ajax({
 					url: this.opts.autosave,
 					type: 'post',
-					data: this.$el.attr('name') + '=' + this.getCode(),
+					data: {'text': this.getCode()},
 					success: $.proxy(function(data)
 					{
 						// callback					
