@@ -42,7 +42,8 @@ def upload_file(request):
 
 @user_passes_test(lambda u: u.is_superuser)
 def autosave_post(request):
-	return ''
+	Post.objects.get(id=request.GET['id']).update(text=request.POST['text']).save()
+	return HttpResponse('updated successfully')
 
 def sitemap(request):
 	template_vars = {}
