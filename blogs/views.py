@@ -42,9 +42,12 @@ def upload_file(request):
 
 @user_passes_test(lambda u: u.is_superuser)
 def autosave_post(request):
-	autosave_post = Post.objects.get(id=request.GET['id'])
-	autosave_post.text = request.POST['text']
-	autosave_post.save()
+	try:
+		autosave_post = Post.objects.get(id=request.GET['id'])
+		autosave_post.text = request.POST['text']
+		autosave_post.save()
+	except:
+		HttpResponse('updated unsuccessfully')
 	return HttpResponse('updated successfully')
 
 def sitemap(request):
