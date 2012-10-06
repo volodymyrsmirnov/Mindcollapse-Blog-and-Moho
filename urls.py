@@ -15,6 +15,8 @@ urlpatterns = patterns('',
 
 	# Uncomment the next line to enable the admin:
 
+	url(r'^godmode/blog_upload_file$', 'blogs.views.upload_file'),
+	url(r'^godmode/blog_autosave_post$', 'blogs.views.autosave_post'),
 	url(r'^godmode/', include(admin.site.urls)), 
 	
 	url(r'^moho/$', 'mohos.views.index'), 
