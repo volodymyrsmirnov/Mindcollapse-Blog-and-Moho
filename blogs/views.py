@@ -38,7 +38,7 @@ def upload_file(request):
 
 	destination_file.close()
 
-	return dumps({'filelink':upload_destination})
+	return HttpResponse(dumps({'filelink':upload_destination.replace(settings.MEDIA_ROOT, '/media/')}))
 
 @user_passes_test(lambda u: u.is_superuser)
 def autosave_post(request):
