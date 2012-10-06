@@ -5,7 +5,8 @@ $(function(){
 		fixedBox: true,
 		fixed: true,
 		imageUpload: '/godmode/blog_upload_file',
-		fileUpload: '/godmode/blog_upload_file'
+		fileUpload: '/godmode/blog_upload_file',
+		callback: function(obj) { $('.redactor_box').css('width','900px'); } 
 	}); 
 
 	/* dont need any WYSIWYG in MOHO, disable it 
@@ -17,5 +18,7 @@ $(function(){
 	}); 
 
 	*/
+
+	
 
 });

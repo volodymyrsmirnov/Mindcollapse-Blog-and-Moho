@@ -16,7 +16,8 @@
 	display: none;
 }
 
-.blogs-post.change-form #id_text {
+.redactor_box {
+	font-family: Georgia, "Times New Roman", Times, serif !important;
 	width: 900px !important;
 }
 
