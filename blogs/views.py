@@ -4,6 +4,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import user_passes_test
+from django.template.loader import render_to_string
 from django.conf import settings
 
 from django.http import Http404
@@ -13,6 +14,11 @@ from blogs.models import Post
 from mohos.models import Moho
 
 from json import dumps
+
+from fpdf import FPDF, HTMLMixin
+
+class MyFPDF(FPDF, HTMLMixin):
+    pass
 
 # GODMODE hacks
 @user_passes_test(lambda u: u.is_superuser)
@@ -61,14 +67,29 @@ def rss(request):
 	return render_to_response('blog/rss.xml', template_vars, context_instance=RequestContext(request), mimetype='application/xml')
 	
 def id(request, id):
-    template_vars = {}
-    try:
-        template_vars['posts'] = [Post.objects.get(id=id)]
-        template_vars['og_post'] = template_vars['posts'][0]
-        template_vars['title'] = template_vars['posts'][0].title + ' @ mindcollapse.com'
-        return render_to_response('blog/posts.html', pumpTemplate(template_vars), context_instance=RequestContext(request))
-    except:
-        raise Http404
+	template_vars = {}
+	try:
+		template_vars['posts'] = [Post.objects.get(id=id)]
+		template_vars['og_post'] = template_vars['posts'][0]
+		template_vars['title'] = template_vars['posts'][0].title + ' @ mindcollapse.com'
+		return render_to_response('blog/posts.html', pumpTemplate(template_vars), context_instance=RequestContext(request))
+	except:
+		raise Http404
+
+def id_pdf(request, id):
+	template_vars = {}
+	try:
+		template_vars['posts'] = [Post.objects.get(id=id)]
+		post_html = render_to_string("blog/posts.pdf.html", template_vars)
+		
+		pdf = MyFPDF()
+		pdf.add_page()
+		pdf.write_html(html)
+		post_pdf = pdf.output('','S')
+
+		return HttpResponse(post_pdf, mimetype='application/pdf')
+	except:
+		raise Http404
 
 def tag(request, tag, page=1):
 	template_vars = {}
