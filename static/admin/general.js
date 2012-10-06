@@ -6,7 +6,11 @@ $(function(){
 		fixed: true,
 		imageUpload: '/godmode/blog_upload_file',
 		fileUpload: '/godmode/blog_upload_file',
-		callback: function(obj) { $('.redactor_box').css('width','900px'); } 
+		callback: function(){$('.redactor_box').css('width','900px')},
+		autosave: '/godmode/blog_autosave_post', 
+        interval: 60,
+        autosaveCallback: function(data) {console.log("Post autosaved with data", data)}
+
 	}); 
 
 	/* dont need any WYSIWYG in MOHO, disable it 
