@@ -35,8 +35,8 @@ class PostAdmin(admin.ModelAdmin):
 	search_fields = ['title', 'text']
 	
 	class Media: 
-		css = {"all": ("/admin/general.css", "/admin/cleditor/jquery.cleditor.css")}
-		js = ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", "/admin/cleditor/jquery.cleditor.js", "/admin/general.js")
-	                                                                                                         	
+		css = {"all": ("/admin/general.css", "/static/admin/redactor/redactor.css")}
+		js = ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", "/static/admin/redactor/redactor.min.js", "/admin/general.js")
+
 admin.site.register(Post, PostAdmin)
 admin.site.register(Tag, TagAdmin)
