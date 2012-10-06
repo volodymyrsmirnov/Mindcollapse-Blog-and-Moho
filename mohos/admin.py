@@ -59,9 +59,9 @@ class MohoAdmin(admin.ModelAdmin):
 	
 	class Media:
 			css = {
-				"all": ("/admin/general.css", "/admin/cleditor/jquery.cleditor.css")
+				"all": ("/admin/general.css", "/static/admin/redactor/redactor.css")
 			}
-			js = ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", "/admin/cleditor/jquery.cleditor.js", "/admin/general.js")
+			js = ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", "/static/admin/redactor/redactor.min.js", "/admin/general.js")
 	
 admin.site.register(Moho, MohoAdmin)
 admin.site.register(Actor, SubMohoAdmin)

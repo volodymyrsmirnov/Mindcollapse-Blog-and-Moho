@@ -20,8 +20,6 @@ Nginx config example
 			
 	server {
 	        server_name www.mindcollapse.com;
-
-	
 	 		
 	        location /media {
 	                root /home/mindcollapse/www/;
