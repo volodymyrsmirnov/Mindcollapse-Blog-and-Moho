@@ -57,11 +57,11 @@ class MohoAdmin(admin.ModelAdmin):
 	save_on_top = True
 	search_fields = ['title', 'text']
 	
-	class Media:
-			css = {
-				"all": ("/admin/general.css", "/static/admin/redactor/redactor.css")
-			}
-			js = ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", "/static/admin/redactor/redactor.min.js", "/admin/general.js")
+	ordering = ('-id',)
+	
+	class Media: 
+		css = {"all": ("/admin/general.css", "/static/admin/redactor/redactor.css")}
+		js = ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", "/static/admin/redactor/redactor.min.js", "/admin/general.js")
 	
 admin.site.register(Moho, MohoAdmin)
 admin.site.register(Actor, SubMohoAdmin)

@@ -15,4 +15,11 @@
 .blogs-post.change-form label[for=id_text] {
 	display: none;
 }
-        
+
+.blogs-post.change-form #id_text {
+	width: 900px !important;
+}
+
+.mohos-moho.change-form #id_text {
+	width: 800px !important;
+}

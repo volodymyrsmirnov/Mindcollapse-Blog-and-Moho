@@ -33,6 +33,8 @@ class PostAdmin(admin.ModelAdmin):
 	list_per_page = 50
 	save_on_top = True
 	search_fields = ['title', 'text']
+
+	ordering = ('-id',)
 	
 	class Media: 
 		css = {"all": ("/admin/general.css", "/static/admin/redactor/redactor.css")}
