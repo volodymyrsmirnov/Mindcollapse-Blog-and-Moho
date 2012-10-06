@@ -15,7 +15,7 @@ from mohos.models import Moho
 from json import dumps
 
 # GODMODE hacks
-@user_passes_test(lambda u: u.is_superuser
+@user_passes_test(lambda u: u.is_superuser)
 def upload_file(request):
 	upload_destination = settings.MEDIA_ROOT + "blog_uploads/"
 
