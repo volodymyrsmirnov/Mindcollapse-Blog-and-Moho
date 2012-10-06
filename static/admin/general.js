@@ -12,7 +12,7 @@ $(function(){
 		imageUpload: '/godmode/blog_upload_file',
 		fileUpload: '/godmode/blog_upload_file',
 		callback: function(){$('.redactor_box').css('width','900px')},
-		autosave: '/godmode/blog_autosave_post?post_id=' + post_id, 
+		autosave: '/godmode/blog_autosave_post?id=' + post_id, 
         interval: 60,
         autosaveCallback: function(data) {console.log("Post autosaved with data", data)}
 
