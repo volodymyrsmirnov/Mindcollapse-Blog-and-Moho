@@ -66,8 +66,4 @@ $(function(){
 
 		})
 	});
-
-	$(".article .description img.lazy").lazyload({
-		effect : "fadeIn"
- 	});
 })
