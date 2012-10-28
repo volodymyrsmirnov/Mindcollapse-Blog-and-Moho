@@ -25,45 +25,49 @@ function LeftRightNavigate(event) {
 
 $(function(){
 
-    // Social share buttons
-    $(".social a").click(function(e){
-        e.preventDefault();
-        window.open ($(this).attr('href'), $(this).attr('title'),"location=0,status=0,scrollbars=0,width=640,height=480");
-    })
+	// Social share buttons
+	$(".social a").click(function(e){
+		e.preventDefault();
+		window.open ($(this).attr('href'), $(this).attr('title'),"location=0,status=0,scrollbars=0,width=640,height=480");
+	})
 
-    // Hide paginations links if display resolution width is less then 1050
-    $(window).resize(function() {
-        if ($(window).width() < 1050)
-            $('.pagination_link').hide();
-        else
-            $('.pagination_link').show();
-    });
+	// Hide paginations links if display resolution width is less then 1050
+	$(window).resize(function() {
+		if ($(window).width() < 1050)
+			$('.pagination_link').hide();
+		else
+			$('.pagination_link').show();
+	});
 
-    $(window).trigger('resize');
+	$(window).trigger('resize');
 
-    // Sliding post headers
-    $(document).scroll(function(e){
-        var scroll_top = $(document).scrollTop();
+	// Sliding post headers
+	$(document).scroll(function(e){
+		var scroll_top = $(document).scrollTop();
 
-        $('.article').each(function(id, article){
+		$('.article').each(function(id, article){
 
-            var article = $(article);
+			var article = $(article);
 
-            article.find('.header').css('z-index', id);
+			article.find('.header').css('z-index', id);
 
-            var scroll_zone = {
-                'top':article.position().top + 23,
-                'bottom': article.position().top + article.height()+100
-            }
+			var scroll_zone = {
+				'top':article.position().top + 23,
+				'bottom': article.position().top + article.height()+100
+			}
 
-            if (scroll_top > scroll_zone.top && scroll_top < scroll_zone.bottom) {
-                article.find('.header').css('position', 'fixed').css('top', 0);
-                article.find('.description').css('padding-top', '55px');
-            } else {
-                article.find(".header").css('position', 'relative');
-                article.find(".description").css('padding-top', '8px');
-            }
+			if (scroll_top > scroll_zone.top && scroll_top < scroll_zone.bottom) {
+				article.find('.header').css('position', 'fixed').css('top', 0);
+				article.find('.description').css('padding-top', '55px');
+			} else {
+				article.find(".header").css('position', 'relative');
+				article.find(".description").css('padding-top', '8px');
+			}
 
-        })
-    })
+		})
+	});
+
+	$(".article .description img.lazy").lazyload({
+		effect : "fadeIn"
+ 	});
 })
