@@ -1,4 +1,6 @@
-{% extends "blog/layout.html" %} 
+{% extends "blog/layout.html" %}
+{% load lazy_images %}
+
 {% block posts %}
 
 {% for post in posts %}
@@ -22,7 +24,7 @@
     </div>
 
 	<div itemprop="description" class='description'>
-        {{post.text|safe}}
+        {{post.text|lazy_images}}
     </div>
 	<div class='footer'>теглайн: {% for tag in post.tags.all %}<a class='tag' href='{% url blogs.views.tag tag=tag.slug %}'>{{tag.name}}</a>&nbsp;{% empty %}доисторический безтеговый пост{% endfor %}| <a itemprop="url" href="{% url blogs.views.id id=post.id %}">постоянная ссылка</a> или <a itemprop="url" href="{% url blogs.views.id_pdf id=post.id %}">PDF</a></div>
 </div>
