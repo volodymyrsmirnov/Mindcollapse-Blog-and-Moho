@@ -1,8 +1,9 @@
+import re
 from django import template
-
+from django.template.defaultfilters import stringfilter
 register = template.Library()
 
-@register.filter(is_safe=True)
+@stringfilter
 def lazy_images(value):
     for match in re.finditer('<img.*?class="lazy".*?>', value):
         replace_from = match.group(0)
@@ -10,3 +11,7 @@ def lazy_images(value):
         value = value.replace(replace_from, replace_to)
 
     return value
+
+lazy_images.is_safe = True
+
+register.filter('lazy_images', lazy_images)
