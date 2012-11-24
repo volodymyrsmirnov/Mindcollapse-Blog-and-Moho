@@ -11,20 +11,13 @@ $(function(){
 				disableAJAX = true;
 				$.get('/moho/ajax/?type='+ajaxType+'&page='+scrollPage, function(data){
 
-
-
 					scrollCount -=7;
 					$('#loading').hide();
 					$('#reviews').append(data);
 					scrollPage++;
 					disableAJAX = false;
+					
 				});
-
-
-				if (history && history.replaceState) {
-					history.replaceState(null, null, "/moho/page/?type="+ajaxType+'&page='+scrollPage);
-				}
-
 			}
 		}
 	}); 
