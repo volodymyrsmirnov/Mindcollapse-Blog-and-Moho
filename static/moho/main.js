@@ -11,9 +11,7 @@ $(function(){
 				disableAJAX = true;
 				$.get('/moho/ajax/?type='+ajaxType+'&page='+scrollPage, function(data){
 
-					if (history && history.replaceState) {
-						history.replaceState(null, null, "/moho/page/?type="+ajaxType+'&page='+scrollPage);
-					}
+
 
 					scrollCount -=7;
 					$('#loading').hide();
@@ -21,6 +19,12 @@ $(function(){
 					scrollPage++;
 					disableAJAX = false;
 				});
+
+
+				if (history && history.replaceState) {
+					history.replaceState(null, null, "/moho/page/?type="+ajaxType+'&page='+scrollPage);
+				}
+
 			}
 		}
 	}); 
