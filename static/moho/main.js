@@ -11,8 +11,8 @@ $(function(){
 				disableAJAX = true;
 				$.get('/moho/ajax/?type='+ajaxType+'&page='+scrollPage, function(data){
 
-					if (history && history.pushState) {
-						history.pushState(null, null, "/moho/page/"+ajaxType+"/"+scrollPage);
+					if (history && history.replaceState) {
+						history.replaceState(null, null, "/moho/page/?type="+ajaxType+'&page='+scrollPage);
 					}
 
 					scrollCount -=7;
