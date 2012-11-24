@@ -10,6 +10,11 @@ $(function(){
 				$('#loading').show(); 
 				disableAJAX = true;
 				$.get('/moho/ajax/?type='+ajaxType+'&page='+scrollPage, function(data){
+
+					if (history && history.pushState) {
+						history.pushState(null, null, "/moho/page/"+ajaxType+"/"+scrollPage);
+					}
+
 					scrollCount -=7;
 					$('#loading').hide();
 					$('#reviews').append(data);
