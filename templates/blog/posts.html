@@ -11,11 +11,11 @@
         <div class='information'>пост написан и отправлен в печать <span itemprop="dateCreated">{{post.createdAt|date:"Y-m-d"}}</span> примерно в <span title='со времени публикации прошло {{post.createdAt|timesince}}'>{{post.createdAt|date:"H:i"}}</span>
 
             <div class='social'>
-                <a target="_blank" href="http://vkontakte.ru/share.php?url=http://www.mindcollapse.com{% url blogs.views.id id=post.id %}" class="vk" title="Share in Vkontakte"></a>
-                <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.mindcollapse.com{% url blogs.views.id id=post.id %}" class="fb" title="Share in Facebook"></a>
-                <a target="_blank" href="http://twitter.com/share?url=http://www.mindcollapse.com{% url blogs.views.id id=post.id %}&amp;text={{post.title|urlencode}}&amp;via=middlesizetit" class="tw" title="Share in Twitter"></a>
+                <a target="_blank" href="http://vkontakte.ru/share.php?url=http://www.mindcollapse.com{% url 'blogs.views.id' id=post.id %}" class="vk" title="Share in Vkontakte"></a>
+                <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.mindcollapse.com{% url 'blogs.views.id' id=post.id %}" class="fb" title="Share in Facebook"></a>
+                <a target="_blank" href="http://twitter.com/share?url=http://www.mindcollapse.com{% url 'blogs.views.id' id=post.id %}&amp;text={{post.title|urlencode}}&amp;via=middlesizetit" class="tw" title="Share in Twitter"></a>
 
-                <g:plusone href="http://www.mindcollapse.com{% url blogs.views.id id=post.id %}" size="small" annotation="none"></g:plusone>
+                <g:plusone href="http://www.mindcollapse.com{% url 'blogs.views.id' id=post.id %}" size="small" annotation="none"></g:plusone>
                 
             </div>
 
@@ -26,7 +26,7 @@
 	<div itemprop="description" class='description'>
         {{post.text|lazy_images|safe}}
     </div>
-	<div class='footer'>теглайн: {% for tag in post.tags.all %}<a class='tag' href='{% url blogs.views.tag tag=tag.slug %}'>{{tag.name}}</a>&nbsp;{% empty %}доисторический безтеговый пост{% endfor %}| <a itemprop="url" href="{% url blogs.views.id id=post.id %}">постоянная ссылка</a> или <a itemprop="url" href="{% url blogs.views.id_pdf id=post.id %}">PDF</a></div>
+	<div class='footer'>теглайн: {% for tag in post.tags.all %}<a class='tag' href='{% url 'blogs.views.tag' tag=tag.slug %}'>{{tag.name}}</a>&nbsp;{% empty %}доисторический безтеговый пост{% endfor %}| <a itemprop="url" href="{% url 'blogs.views.id' id=post.id %}">постоянная ссылка</a> или <a itemprop="url" href="{% url 'blogs.views.id_pdf' id=post.id %}">PDF</a></div>
 </div>
 {% endfor %}
 

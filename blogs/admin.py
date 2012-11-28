@@ -37,8 +37,8 @@ class PostAdmin(admin.ModelAdmin):
 	ordering = ('-id',)
 	
 	class Media: 
-		css = {"all": ("/admin/general.css", "/static/admin/redactor/redactor.css")}
-		js = ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", "/static/admin/redactor/redactor.js", "/admin/general.js")
+		css = {"all": ("/static/admin/general.css", "/static/admin/redactor/redactor.css")}
+		js = ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", "/static/admin/redactor/redactor.js", "/static/admin/general.js")
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Tag, TagAdmin)

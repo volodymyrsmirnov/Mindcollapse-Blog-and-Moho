@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
 
@@ -6,15 +6,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-	# Examples:
-	# url(r'^$', 'mindcollapse_com.views.home', name='home'),
-	# url(r'^mindcollapse_com/', include('mindcollapse_com.foo.urls')),
-
-	# Uncomment the admin/doc line below to enable admin documentation:
-	# url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-	# Uncomment the next line to enable the admin:
-
 	url(r'^godmode/blog_upload_file$', 'blogs.views.upload_file'),
 	url(r'^godmode/blog_autosave_post$', 'blogs.views.autosave_post'),
 	url(r'^godmode/', include(admin.site.urls)), 
@@ -40,6 +31,5 @@ urlpatterns = patterns('',
 	url(r'^blog/tag/(?P<tag>\w+)/page/(?P<page>\d+)/$', 'blogs.views.tag'),		
 	url(r'^blog/tag/(?P<tag>\w+)/$', 'blogs.views.tag'),
 	url(r'^blog/sitemap\.xml$', 'blogs.views.sitemap'),
-	url(r'^$', 'blogs.views.index'),   
-	
+	url(r'^$', 'blogs.views.index'),	
 )
