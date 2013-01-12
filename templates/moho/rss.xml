@@ -5,7 +5,7 @@
 		<link>http://www.mindcollapse.com/moho/</link>
 		<description>Краткие обзоры фильмов на My Own Humble Opinion</description>
 		<language>ru-ru</language> 
-		<lastBuildDate>{% now "r" %}</lastBuildDate>
+		<lastBuildDate>{{reviews.0.createdAt|date:"r"}}</lastBuildDate>
 		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
 		{% for review in reviews%}
 		<item>
