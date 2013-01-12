@@ -26,7 +26,7 @@ class Moho (models.Model):
 		return self.title.capitalize()
 
 	def save(self, *args, **kwargs):
-		self.slug = slugify("{0} {1}".format(self.title, self.year))
+		self.slug = slugify("{0}".format(self.title))
 		super(Moho, self).save(*args, **kwargs)
 	
 class Genre(models.Model):
