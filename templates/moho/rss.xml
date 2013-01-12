@@ -10,11 +10,11 @@
 		{% for review in reviews%}
 		<item>
 			<title><![CDATA[{{review.title|safe}} ({{review.year}})]]></title>
-			<link>http://www.mindcollapse.com/moho/id/{{review.id}}</link>
-			<guid>http://www.mindcollapse.com/moho/id/{{review.id}}</guid>
+			<link>http://www.mindcollapse.com{% url 'mohos.views.slug' year=review.year slug=review.slug %}</link>
+			<guid>http://www.mindcollapse.com{% url 'mohos.views.slug' year=review.year slug=review.slug %}</guid>
 			<description>
 				<![CDATA[ 				
-				<p><a href="http://www.mindcollapse.com{% url 'mohos.views.id' id=review.id %}">{{review.title|title}}</a>, <a href="http://www.mindcollapse.com{% url 'mohos.views.year' year=review.year %}">{{review.year}}</a>, <a target='_blank' href='{{review.imdbURL}}'>imdb</a></p>
+				<p><a href="http://www.mindcollapse.com{% url 'mohos.views.slug' year=review.year slug=review.slug %}">{{review.title|title}}</a>, <a href="http://www.mindcollapse.com{% url 'mohos.views.year' year=review.year %}">{{review.year}}</a>, <a target='_blank' href='{{review.imdbURL}}'>imdb</a></p>
 				<p>Если в двух словах, то фильм мне <b>{% if not review.like %}не {% endif %}понравился</b>.</p>
 				<p>Снял {% for director in review.directors.all %}<a href='http://www.mindcollapse.com{% url 'mohos.views.director' director=director.slug %}'>{{director.name|title}}</a>{% if forloop.last %}{% else %},&nbsp;{% endif %}{% endfor %} при участии {% for actor in review.actors.all %}<a href='http://www.mindcollapse.com{% url 'mohos.views.actor' actor=actor.slug %}'>{{actor.name|title}}</a>{% if forloop.last %}{% else %},&nbsp;{% endif %}{% endfor %}.</p>
 				<div>{{review.text|safe}}</div> 

@@ -15,19 +15,19 @@
 	<meta name="y_key" content="04bed234d6a405cc"/> 
 	<meta name="msvalidate.01" content="62188F55275960794DDFA698C3EA9F05"/>
 
-    {% if og_post %}
+	{% if og_post %}
 
-    	<meta property="og:title" content="Обзор фильма {{og_post.title}}"/>
-    	<meta property="og:description" content="{{og_post.text|striptags|truncatewords:50}}"/>
-    	<meta property="og:type" content="article"/>
-    	<meta property="og:image" content="http://www.mindcollapse.com/media/{{og_post.imageURL}}"/>
-    	<meta property="fb:admins" content="1405335117"/>
-    	<meta property="og:site_name" content="My Own Humbe Opinion: краткие обзоры фильмов"/>
-    	<meta property="og:url" content="http://www.mindcollapse.com{% url 'mohos.views.id' id=og_post.id %}"/>
+		<meta property="og:title" content="Обзор фильма {{og_post.title}}"/>
+		<meta property="og:description" content="{{og_post.text|striptags|truncatewords:50}}"/>
+		<meta property="og:type" content="article"/>
+		<meta property="og:image" content="http://www.mindcollapse.com/media/{{og_post.imageURL}}"/>
+		<meta property="fb:admins" content="1405335117"/>
+		<meta property="og:site_name" content="My Own Humbe Opinion: краткие обзоры фильмов"/>
+		<meta property="og:url" content="http://www.mindcollapse.com{% url 'mohos.views.slug' year=og_post.year slug=og_post.slug %}"/>
 
-    {% endif %}
+	{% endif %}
 
-    	<link rel="author" href="https://plus.google.com/110904145311662435301" rel="me"/>
+	<link rel="author" href="https://plus.google.com/110904145311662435301" rel="me"/>
 	<link rel="icon" href="http://www.mindcollapse.com/favicon.ico" type="image/vnd.microsoft.icon"/>
 	<link rel="apple-touch-icon" href="http://www.mindcollapse.com/apple-touch-icon.png"/>
 	<link rel="stylesheet" type="text/css" href="//www.mindcollapse.com/moho/main.css"/>

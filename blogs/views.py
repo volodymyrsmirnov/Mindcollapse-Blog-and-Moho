@@ -114,6 +114,6 @@ def index(request, page=1):
 	
 
 def pumpTemplate(template):
-	template['randomMohos'] = Moho.objects.filter(visible=True).values('id', 'year', 'title', 'imageURL').order_by('?')[:7]
+	template['randomMohos'] = Moho.objects.filter(visible=True).values('id', 'year', 'slug', 'title', 'imageURL').order_by('?')[:7]
 	return template
 	

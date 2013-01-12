@@ -59,7 +59,7 @@ def director(request,director):
 def sitemap(request):
 	template_vars = {}
 	
-	template_vars['reviews'] = Moho.objects.values('id','createdAt').order_by('-id').filter(visible=True)
+	template_vars['reviews'] = Moho.objects.values('id', 'year', 'slug', 'createdAt').order_by('-id').filter(visible=True)
 	return render_to_response('moho/sitemap.xml', template_vars, mimetype='application/xml')
 	
 def rss(request):

@@ -1,12 +1,12 @@
 {% for review in reviews %}
 <div class='article' itemscope itemtype="http://schema.org/Movie">
 	<div class='poster {% if review.like %}like{% else %}dislike{% endif %}' style='background-image: url(//www.mindcollapse.com/media/{{review.imageURL}})'>
-        <img itemprop="image" src='//www.mindcollapse.com/media/{{review.imageURL}}'/>
+		<img itemprop="image" src='//www.mindcollapse.com/media/{{review.imageURL}}'/>
 	</div>
 	
 	<div class='review'>
 	
-		<h3><span itemprop="name">{{review.title|title}}</span>, <a itemprop="datePublished" href="{% url 'mohos.views.year' year=review.year %}">{{review.year}}</a>, <a itemprop="url" href="{% url 'mohos.views.id' id=review.id %}">#</a></h3>
+		<h3><span itemprop="name">{{review.title|title}}</span>, <a itemprop="datePublished" href="{% url 'mohos.views.year' year=review.year %}">{{review.year}}</a>, <a itemprop="url" href="{% url 'mohos.views.slug' year=review.year slug=review.slug %}">#</a></h3>
 		<h4>Снял {% for director in review.directors.all %}<span itemprop="director" itemscope itemtype="http://schema.org/People"><a itemprop="url" href='{% url 'mohos.views.director' director=director.slug %}'><span itemprop="name">{{director.name|title}}</span></a></span>{% if forloop.last %}{% else %},&nbsp;{% endif %}{% endfor %} при участии {% for actor in review.actors.all %}<span itemprop="actors" itemscope itemtype="http://schema.org/People"><a itemprop="url" href='{% url 'mohos.views.actor' actor=actor.slug %}'><span itemprop="name">{{actor.name|title}}</span></a></span>{% if forloop.last %}{% else %},&nbsp;{% endif %}{% endfor %}.</h4>
 	
 		<p itemprop="description" class='text'>{{review.text|safe}}</p>
