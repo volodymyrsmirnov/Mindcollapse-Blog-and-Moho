@@ -1,7 +1,7 @@
 {% for review in reviews %}
 <div class='article' itemscope itemtype="http://schema.org/Movie">
 	<div class='poster {% if review.like %}like{% else %}dislike{% endif %}' style='background-image: url(//www.mindcollapse.com/media/{{review.imageURL}})'>
-		<img itemprop="image" src='//www.mindcollapse.com/media/{{review.imageURL}}'/>
+		<img alt="{{review.title|title}}" itemprop="image" src='//www.mindcollapse.com/media/{{review.imageURL}}'/>
 	</div>
 	
 	<div class='review'>
