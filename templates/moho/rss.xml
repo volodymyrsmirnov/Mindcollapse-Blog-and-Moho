@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel> 
 		<title>My Own Humble Opinion</title>
 		<link>http://www.mindcollapse.com/moho/</link>
@@ -7,11 +7,12 @@
 		<language>ru-ru</language> 
 		<lastBuildDate>{{reviews.0.createdAt|date:"r"}}</lastBuildDate>
 		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+		<atom:link href="http://www.mindcollapse.com/moho/rss.xml" rel="self" type="application/rss+xml" />
 		{% for review in reviews%}
 		<item>
 			<title><![CDATA[{{review.title|safe}} ({{review.year}})]]></title>
 			<link>http://www.mindcollapse.com{% url 'mohos.views.slug' year=review.year slug=review.slug %}</link>
-			<guid>{{review.slug}}-{{review.year}}</guid>
+			<guid>http://www.mindcollapse.com{% url 'mohos.views.slug' year=review.year slug=review.slug %}</guid>
 			<description>
 				<![CDATA[ 				
 				<p><a href="http://www.mindcollapse.com{% url 'mohos.views.slug' year=review.year slug=review.slug %}">{{review.title|title}}</a>, <a href="http://www.mindcollapse.com{% url 'mohos.views.year' year=review.year %}">{{review.year}}</a>, <a target='_blank' href='{{review.imdbURL}}'>imdb</a></p>
