@@ -140,6 +140,16 @@ def id(request, id):
 		template_vars['og_post'] = template_vars['reviews'][0]
 		template_vars['title'] = u"Обзор фильма " + template_vars['reviews'][0].title + " : My Own Humble Opinion"
 		return render_to_response('moho/reviews.html', pumpTemplate(template_vars), context_instance=RequestContext(request))
+
+def slug(request, year, slug):
+	template_vars = {'disableAJAX':'true'}
+	template_vars['reviews'] = Moho.objects.filter(visible=True, year=year, slug=slug)[:1]
+	if template_vars['reviews'].count() == 0: raise Http404
+	else:
+		template_vars['enable_similar'] = True
+		template_vars['og_post'] = template_vars['reviews'][0]
+		template_vars['title'] = u"Обзор фильма " + template_vars['reviews'][0].title + " : My Own Humble Opinion"
+		return render_to_response('moho/reviews.html', pumpTemplate(template_vars), context_instance=RequestContext(request))
 	
 def pumpTemplate(template):
 	template['mohosTotalCount'] = Moho.objects.filter(visible=True).count()

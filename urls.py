@@ -12,7 +12,6 @@ urlpatterns = patterns('',
 	
 	url(r'^moho/$', 'mohos.views.index'), 
 	url(r'^moho/(?P<attitude>like|dislike)/$', 'mohos.views.attitude'),
-	url(r'^moho/year/(?P<year>\d{4})/$', 'mohos.views.year'),
 	url(r'^moho/id/(?P<id>\d+)$', 'mohos.views.id'),
 	
 	url(r'^moho/genre/(?P<genre>.*)/$', 'mohos.views.genre'),
@@ -22,6 +21,10 @@ urlpatterns = patterns('',
 	url(r'^moho/ajax/$', 'mohos.views.ajax'),
 	url(r'^moho/rss\.xml$', 'mohos.views.rss'),
 	url(r'^moho/sitemap\.xml$', 'mohos.views.sitemap'),
+
+	url(r'^moho/(?P<year>\d{4})/$', 'mohos.views.year'),
+	url(r'^moho/(?P<year>\d{4})/(?P<slug>.*)$', 'mohos.views.slug'),
+
 	
 	url(r'^blog/$', 'blogs.views.index'),    
 	url(r'^blog/page/(?P<page>\d+)/$', 'blogs.views.index'),
