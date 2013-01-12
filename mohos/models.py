@@ -1,3 +1,4 @@
+from django.template.defaultfilters import slugify
 from django.db import models
 
 class Moho (models.Model):
@@ -8,6 +9,7 @@ class Moho (models.Model):
 	visible		=	models.BooleanField(default=False, verbose_name="Published")
 	
 	title		=	models.CharField(max_length=128)
+	slug 		=	models.SlugField()
 	text		=	models.TextField()
 	year		=	models.PositiveSmallIntegerField(blank=True)
 	
@@ -22,6 +24,10 @@ class Moho (models.Model):
 	
 	def __unicode__(self):
 		return self.title.capitalize()
+
+	def save(self, *args, **kwargs):
+		self.slug = slugify(self.title + " " + self.year)
+		super(Moho, self).save(*args, **kwargs)
 	
 class Genre(models.Model):
 	
