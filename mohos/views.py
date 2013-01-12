@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponsePermanentRedirect
+from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import Http404
@@ -136,10 +137,7 @@ def id(request, id):
 	template_vars['reviews'] = Moho.objects.filter(visible=True, id=id)[:1]
 	if template_vars['reviews'].count() == 0: raise Http404
 	else:
-		template_vars['enable_similar'] = True
-		template_vars['og_post'] = template_vars['reviews'][0]
-		template_vars['title'] = u"Обзор фильма " + template_vars['reviews'][0].title + " : My Own Humble Opinion"
-		return render_to_response('moho/reviews.html', pumpTemplate(template_vars), context_instance=RequestContext(request))
+		return HttpResponsePermanentRedirect(reverse('mohos.views.slug', None, [str(template_vars['reviews'][0].year), str(template_vars['reviews'][0].title)]))
 
 def slug(request, year, slug):
 	template_vars = {'disableAJAX':'true'}
