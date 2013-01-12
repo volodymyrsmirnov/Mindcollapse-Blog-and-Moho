@@ -16,7 +16,7 @@
 	
 {% if enable_similar %}
 <span id='similar'>
-{% for similar_review in review.get_similar %}<a href='{% url 'mohos.views.id' id=similar_review.id %}' title='{{similar_review.title}} ({{similar_review.year}})' style='background-image:url(//www.mindcollapse.com/media/{{similar_review.imageURL}});'></a>{% endfor %}
+{% for similar_review in review.get_similar %}<a href='{% url 'mohos.views.slug' year=similar_review.year slug=similar_review.slug %}' title='{{similar_review.title}} ({{similar_review.year}})' style='background-image:url(//www.mindcollapse.com/media/{{similar_review.imageURL}});'></a>{% endfor %}
 </span>
 {% endif %}
 </div>

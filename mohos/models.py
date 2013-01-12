@@ -20,7 +20,7 @@ class Moho (models.Model):
 	directors	=	models.ManyToManyField('Director', related_name='directors', blank=True)
 	
 	def get_similar(self):
-		return Moho.objects.distinct().values('id','title','year', 'imageURL').filter(like=self.like, genres__in = self.genres.all()).exclude(id=self.id).order_by('?')[:9]		
+		return Moho.objects.distinct().values('id','title','year','slug','imageURL').filter(like=self.like, genres__in = self.genres.all()).exclude(id=self.id).order_by('?')[:9]		
 	
 	def __unicode__(self):
 		return self.title.capitalize()
