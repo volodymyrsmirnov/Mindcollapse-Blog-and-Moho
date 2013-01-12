@@ -23,7 +23,7 @@ urlpatterns = patterns('',
 	url(r'^moho/sitemap\.xml$', 'mohos.views.sitemap'),
 
 	url(r'^moho/(?P<year>\d{4})/$', 'mohos.views.year'),
-	url(r'^moho/(?P<year>\d{4})/(?P<slug>.*)$', 'mohos.views.slug'),
+	url(r'^moho/(?P<year>\d{4})/(?P<slug>.*)\.html$', 'mohos.views.slug'),
 
 	url(r'^blog/$', 'blogs.views.index'),    
 	url(r'^blog/page/(?P<page>\d+)/$', 'blogs.views.index'),
