@@ -137,7 +137,7 @@ def id(request, id):
 	template_vars['reviews'] = Moho.objects.filter(visible=True, id=id)[:1]
 	if template_vars['reviews'].count() == 0: raise Http404
 	else:
-		return HttpResponsePermanentRedirect(reverse('mohos.views.slug', None, [str(template_vars['reviews'][0].year), str(template_vars['reviews'][0].title)]))
+		return HttpResponsePermanentRedirect(reverse('mohos.views.slug', None, [str(template_vars['reviews'][0].year), str(template_vars['reviews'][0].slug)]))
 
 def slug(request, year, slug):
 	template_vars = {'disableAJAX':'true'}
