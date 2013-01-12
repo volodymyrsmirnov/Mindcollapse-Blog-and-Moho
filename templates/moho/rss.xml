@@ -21,7 +21,7 @@
 				<p>&#167; {% for genre in review.genres.all %}<a href='http://www.mindcollapse.com{% url 'mohos.views.genre' genre=genre.slug %}'>{{genre.name}}</a>{% if forloop.last %}{% else %},&nbsp;{% endif %}{% endfor %}</p>
 				]]>
 			</description>
-			<category>{% for genre in review.genres.all %}<a href='http://www.mindcollapse.com{% url 'mohos.views.genre' genre=genre.slug %}'>{{genre.name}}</a>{% if forloop.last %}{% else %}/{% endif %}{% endfor %}</category>
+			<category>{% for genre in review.genres.all %}{{genre.name}}{% if forloop.last %}{% else %}/{% endif %}{% endfor %}</category>
 			<pubDate>{{review.createdAt|date:"r"}}</pubDate>
 		</item>
 		{% endfor %}
