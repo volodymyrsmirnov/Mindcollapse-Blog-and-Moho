@@ -912,7 +912,7 @@ CREATE TABLE `mohos_actor` (
   `slug` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `mohos_actor_a951d5d6` (`slug`)
-) ENGINE=MyISAM AUTO_INCREMENT=804 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=808 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_actor` VALUES (1,'amy adams','amy-adams');
 INSERT INTO `mohos_actor` VALUES (2,'anthony hopkins','anthony-hopkins');
@@ -1715,6 +1715,10 @@ INSERT INTO `mohos_actor` VALUES (800,'Sally Field','sally-field');
 INSERT INTO `mohos_actor` VALUES (801,'Irrfan Khan','irrfan-khan');
 INSERT INTO `mohos_actor` VALUES (802,'Noah Segan','noah-segan');
 INSERT INTO `mohos_actor` VALUES (803,'Tom Waits','tom-waits');
+INSERT INTO `mohos_actor` VALUES (804,'David Oyelowo','david-oyelowo');
+INSERT INTO `mohos_actor` VALUES (805,'Werner Herzog','werner-herzog');
+INSERT INTO `mohos_actor` VALUES (806,'Joseph Sikora','joseph-sikora');
+INSERT INTO `mohos_actor` VALUES (807,'Jai Courtney','jai-courtney');
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_director` (
@@ -1723,7 +1727,7 @@ CREATE TABLE `mohos_director` (
   `slug` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `mohos_director_a951d5d6` (`slug`)
-) ENGINE=MyISAM AUTO_INCREMENT=277 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=278 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_director` VALUES (1,'tom dey','tom-dey');
 INSERT INTO `mohos_director` VALUES (2,'mikael håfström','mikael-hafstrom');
@@ -2001,6 +2005,7 @@ INSERT INTO `mohos_director` VALUES (273,'Mark Neveldine','mark-neveldine');
 INSERT INTO `mohos_director` VALUES (274,'Peter Medak','peter-medak');
 INSERT INTO `mohos_director` VALUES (275,'Marc Webb','marc-webb');
 INSERT INTO `mohos_director` VALUES (276,'Rian Johnson','rian-johnson');
+INSERT INTO `mohos_director` VALUES (277,'Christopher McQuarrie','christopher-mcquarrie');
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_genre` (
@@ -2044,7 +2049,7 @@ CREATE TABLE `mohos_moho` (
   `imageURL` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `imdbURL` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=381 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=382 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_moho` VALUES (13,'2011-08-19 12:30:12',0,1,'The Walking Dead','the-walking-dead','Вы могли бы себе представить Санта Барбару в мире, зараженном зомби вирусом? Я тоже не мог до просмотра Walking Dead. Для многих задротов, читавших оригинальный комикс, сериал стал самым большим разочарованием года, что касаемо меня, то вердикт прост: первоклассное говно. Вообще, сериал про живых мертвецов испортить сложно, но тут нарушили основную пропорцию, заполнив 90% времени розовыми соплями. Ну а 10% с зомбаками очень хороши, только все должно было быть наоборот. Не смотреть.',2010,'moho/e35ba37ac200e3640a0ff915612c1ef7.jpg','http://www.imdb.com/title/tt1520211/');
 INSERT INTO `mohos_moho` VALUES (14,'2011-08-19 12:30:12',1,1,'Mindhunters','mindhunters','Эталон триллера. Именно так и нужно снимать кино про серийных убийц для щекотания нервов. Этот фильм можно отнести к категории, когда кажется, что убийца - садовник, а в самом конце оказывается, что нихуя. Раз так 5 хорошо дергает от эффекта неожиданности, жаль все именитые актеры погибают практически в самом начале. Кто не смотрел - советую, этот фильм стал уже классикой своего жанра.',2004,'moho/5517f7e404c2073c449e8d33b09dce3e.jpg','http://www.imdb.com/title/tt0297284/');
@@ -2394,6 +2399,7 @@ INSERT INTO `mohos_moho` VALUES (377,'2013-01-09 21:42:01',1,1,'Romeo Is Bleedin
 INSERT INTO `mohos_moho` VALUES (378,'2013-01-09 22:13:03',0,1,'The Amazing Spider-Man','the-amazing-spider-man','Я смотрю подобное кино по разным причинам: иногда это эстетический мазохизм, иногда - легкие наркотики, изредка - сохранение отношений. Все дело в том, что моя вторая половинка не разделяет мой восхищенный взгляд, устремленный в сторону фильмов из прошлого тысячелетия. Так вот, последнего человека паука утвердила именно она, пусть и по моему опрометчивому предложению. Это было очень гадко, скажу я вам, к счастью, мы посмотрели чуть меньше половины, и это тот редкий случай, когда мне все равно, что там случилось в следующие 60 минут. Даже если там показали секс Обамы с гигантской мыслящей слизью из параллельного измерения (что вполне вероятно, учитывая абсурдность первой части), мне абсолютно наплевать. Это не фильм, это ведро помоев, в котором сдохла крыса, а для придания еле уловимого, утонченного одора его выставили на сорокоградусную жару. Единственного нормального актера, Мартина Шина, убивают в целях экономии бюджета спустя пол часа. И слава богу, иначе бы он и дальше толкал все эти сопливые речи про сложности жизни подростка без папаши и прочую идеалистическую чушь. Идиотский фильм про пацана с липкими ладонями в красном трико. Не смотреть.  ',2012,'moho/MV5BMjMyOTM4MDMxNV5BMl5BanBnXkFtZTcwNjIyNzExOA._V1._SY317_.jpg','http://www.imdb.com/title/tt0948470/');
 INSERT INTO `mohos_moho` VALUES (379,'2013-01-11 20:51:24',0,1,'Looper','looper','Мне не понравилось. Базовая идея конечно интересная, но к реализации смысловой части у меня, простите мою занудность, много претензий. Например, зачем убивать самих убийц в будущем, спустя 30 лет после окончания контракта, отсылая их к этим же убийцам в прошлое. Почему именно 30 лет, почему именно ты должен убить сам себя? И почему нельзя убить этого убийцу в будущем? И почему нельзя пересылать не живых людей, а уже готовые трупы, минимизируя риски? О чем я тут вопрошаю, вы поймете лишь посмотрев фильм, или не поймете, пройдя мимо, потеряв совсем не много. Весь сценарий кинофильма состоит из сплошных сюжетных дыр, лично я на дух не переношу истории, где в самом разгаре экшна ловишь себя на мысли \"подождите, так ведь чисто логически быть не должно\". Подобная софткор фантастика без киборгов и больших боевых роботов периодически пролазит на киноэкраны, но чаще всего оказывается третьесортщиной. Стоит вспомнить тот же <a href=\"http://www.mindcollapse.com/moho/id/141\">Source Code</a>. Как итог: мало взять парочку знаменитых актеров и дух футуризма, добавив красивую бабу с пугающим ребенком - полтергейстом, нужно еще связать это все воедино. Не смотреть, третьесортщина.',2012,'moho/MV5BMTY3NTY0MjEwNV5BMl5BanBnXkFtZTcwNTE3NDA1OA._V1._SY317_CR150214317_.jpg','http://www.imdb.com/title/tt1276104/');
 INSERT INTO `mohos_moho` VALUES (380,'2013-01-11 21:24:18',1,1,'Seven Psychopaths','seven-psychopaths','Эта лента больше всего похожа на просмотренные мною недавно <a href=\"http://www.mindcollapse.com/moho/id/377\">Romeo is Bleeding</a> и <a href=\"http://www.mindcollapse.com/moho/id/371\">Kiss Kiss Bang Bang</a>. Отдых от серьезного кинематографа, но без ухода от смысла в депрессивные пошлые семейные кинокомедии, это фильм с тонким юмором и кастлистом, где даже второстепенные герои заслуживают высших похвал, чего и говорить про маститый первый план. Хорошие шутки сменяются моментами, полными драматизма, огромные диалоги и монологи, которые, тем не менее, совсем не утомляют, чередуются с сумасшедшей пальбой из двух рук, стеб над шаблонами Голливуда и повторение этих же шаблонов буквально спустя пару минут. Это не кино, а полная шизофрения. Впрочем, тут это скорее положительная характеристика. Я даже понимаю, что хотел сделать режиссер - снять кино, которое, являясь пародией на жанр, но само не выходит за пределы этого жанра. Получилось отлично. В который раз хочу отметить непревзойденного Сэма Роквела, это очень сложно, светить самой яркой звездой с экрана, когда с одной стороны стоит Колин Фаррел, а с другой - Кристофер Уокен. А потом совсем неожиданно в кадре появляется тот самый Том Уэйтс с белым домашним кроликом в руках, рассказывая свою историю о серийном убийце серийных убийц, и ты понимаешь, что фильм великолепен. Это многослойный пирог, каждый из кусков которого удался на все 100. Однозначно, британский кинематограф опять доказал свою состоятельность.',2012,'moho/MV5BMTgwMzUxMjc0M15BMl5BanBnXkFtZTcwMzQ2MjYyOA._V1._SY317_.jpg','http://www.imdb.com/title/tt1931533/');
+INSERT INTO `mohos_moho` VALUES (381,'2013-01-12 22:53:41',0,1,'Jack Reacher','jack-reacher','Сходили вот с другом в кино. Это не фильм, это лакмусовая бумажка современного зрителя. Ну помните, такая вот небольшая полоска была на уроках химии, которой определяли кислотную или щелочную среду. Так вот, Джек Ричар - почти то же самое, только вместо уровня pH тут скорее измеряется глубина тупизы потребителя. Судя по высоченному рейтингу на IMDB и кинопоиске, современный зритель эту проверку провалил. Более пластмассового кино я давно не встречал. Пластмассовый главный герой, стереотипный мачо и брутальный убийца, мышцы, юмор и интеллект, пластмассовое зло - русские, главарь которых пооттгрызал себе пальцы, оставив два для приема звонков по мобильному. Пластмассовые погони и перестрелки. Все какое-то гипертрофированное, но это не основная проблема. Фильм дико скучный. Сцены с молчанием и пустыми ракурсами могут длиться минутами, Том Круз произносит простые фразы с интервалами, как будто бы он страдает болезнью Альцгеймера, диалоги бессмысленные и сводятся к растиранию соплей по лицу. И да, развязка претендует на звание тупейшей концовки года. Это не стоит даже места на диске, я уже молчу про билеты. Не смотреть.',2012,'moho/MV5BMTM1NjUxMDI3OV5BMl5BanBnXkFtZTcwNjg1ODM3OA._V1._SY317_CR30214317_.jpg','http://www.imdb.com/title/tt0790724/');
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_moho_actors` (
@@ -2404,7 +2410,7 @@ CREATE TABLE `mohos_moho_actors` (
   UNIQUE KEY `moho_id` (`moho_id`,`actor_id`),
   KEY `mohos_moho_actors_9a5540fd` (`moho_id`),
   KEY `mohos_moho_actors_5066dfde` (`actor_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3850 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3890 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_moho_actors` VALUES (1,119,1);
 INSERT INTO `mohos_moho_actors` VALUES (2,120,2);
@@ -3732,6 +3738,14 @@ INSERT INTO `mohos_moho_actors` VALUES (3848,380,803);
 INSERT INTO `mohos_moho_actors` VALUES (3842,380,579);
 INSERT INTO `mohos_moho_actors` VALUES (3849,380,537);
 INSERT INTO `mohos_moho_actors` VALUES (3847,380,18);
+INSERT INTO `mohos_moho_actors` VALUES (3882,381,804);
+INSERT INTO `mohos_moho_actors` VALUES (3883,381,805);
+INSERT INTO `mohos_moho_actors` VALUES (3884,381,806);
+INSERT INTO `mohos_moho_actors` VALUES (3885,381,807);
+INSERT INTO `mohos_moho_actors` VALUES (3887,381,77);
+INSERT INTO `mohos_moho_actors` VALUES (3889,381,662);
+INSERT INTO `mohos_moho_actors` VALUES (3888,381,273);
+INSERT INTO `mohos_moho_actors` VALUES (3886,381,460);
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_moho_directors` (
@@ -3742,7 +3756,7 @@ CREATE TABLE `mohos_moho_directors` (
   UNIQUE KEY `moho_id` (`moho_id`,`director_id`),
   KEY `mohos_moho_directors_9a5540fd` (`moho_id`),
   KEY `mohos_moho_directors_81c0b88c` (`director_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=909 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=914 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_moho_directors` VALUES (1,137,1);
 INSERT INTO `mohos_moho_directors` VALUES (2,120,2);
@@ -4105,6 +4119,7 @@ INSERT INTO `mohos_moho_directors` VALUES (900,377,274);
 INSERT INTO `mohos_moho_directors` VALUES (901,378,275);
 INSERT INTO `mohos_moho_directors` VALUES (904,379,276);
 INSERT INTO `mohos_moho_directors` VALUES (908,380,139);
+INSERT INTO `mohos_moho_directors` VALUES (913,381,277);
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_moho_genres` (
@@ -4115,7 +4130,7 @@ CREATE TABLE `mohos_moho_genres` (
   UNIQUE KEY `moho_id` (`moho_id`,`genre_id`),
   KEY `mohos_moho_genres_9a5540fd` (`moho_id`),
   KEY `mohos_moho_genres_f8d711d0` (`genre_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2479 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2494 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_moho_genres` VALUES (1,125,1);
 INSERT INTO `mohos_moho_genres` VALUES (2,128,1);
@@ -5139,3 +5154,6 @@ INSERT INTO `mohos_moho_genres` VALUES (2469,379,4);
 INSERT INTO `mohos_moho_genres` VALUES (2470,379,7);
 INSERT INTO `mohos_moho_genres` VALUES (2478,380,12);
 INSERT INTO `mohos_moho_genres` VALUES (2477,380,11);
+INSERT INTO `mohos_moho_genres` VALUES (2491,381,11);
+INSERT INTO `mohos_moho_genres` VALUES (2492,381,4);
+INSERT INTO `mohos_moho_genres` VALUES (2493,381,6);
