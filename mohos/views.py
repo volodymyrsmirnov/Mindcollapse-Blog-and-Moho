@@ -146,7 +146,7 @@ def slug(request, year, slug):
 	else:
 		template_vars['enable_similar'] = True
 		template_vars['og_post'] = template_vars['reviews'][0]
-		template_vars['title'] = u"Мнение о фильме " + template_vars['reviews'][0].title + " : My Own Humble Opinion"
+		template_vars['title'] = u"Мнение о фильме " + template_vars['reviews'][0].title + " " + template_vars['reviews'][0].year
 		return render_to_response('moho/reviews.html', pumpTemplate(template_vars), context_instance=RequestContext(request))
 	
 def pumpTemplate(template):
