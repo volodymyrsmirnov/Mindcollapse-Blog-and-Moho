@@ -17,7 +17,7 @@
 
 	{% if og_post %}
 
-		<meta property="og:title" content="Обзор фильма {{og_post.title}}"/>
+		<meta property="og:title" content="Мнение о фильме {{og_post.title}}"/>
 		<meta property="og:description" content="{{og_post.text|striptags|truncatewords:50}}"/>
 		<meta property="og:type" content="article"/>
 		<meta property="og:image" content="http://www.mindcollapse.com/media/{{og_post.imageURL}}"/>
