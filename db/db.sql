@@ -912,7 +912,7 @@ CREATE TABLE `mohos_actor` (
   `slug` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `mohos_actor_a951d5d6` (`slug`)
-) ENGINE=MyISAM AUTO_INCREMENT=821 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=825 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_actor` VALUES (1,'amy adams','amy-adams');
 INSERT INTO `mohos_actor` VALUES (2,'anthony hopkins','anthony-hopkins');
@@ -1732,6 +1732,10 @@ INSERT INTO `mohos_actor` VALUES (817,'Scoot McNairy','scoot-mcnairy');
 INSERT INTO `mohos_actor` VALUES (818,'Tate Donovan','tate-donovan');
 INSERT INTO `mohos_actor` VALUES (819,'Vincent Curatola','vincent-curatola');
 INSERT INTO `mohos_actor` VALUES (820,'Trevor Long','trevor-long');
+INSERT INTO `mohos_actor` VALUES (821,'Hugh Jackman','hugh-jackman');
+INSERT INTO `mohos_actor` VALUES (822,'Kate Winslet','kate-winslet');
+INSERT INTO `mohos_actor` VALUES (823,'Stephen Merchant','stephen-merchant');
+INSERT INTO `mohos_actor` VALUES (824,'Richard Gere','richard-gere');
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_director` (
@@ -1740,7 +1744,7 @@ CREATE TABLE `mohos_director` (
   `slug` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `mohos_director_a951d5d6` (`slug`)
-) ENGINE=MyISAM AUTO_INCREMENT=283 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=285 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_director` VALUES (1,'tom dey','tom-dey');
 INSERT INTO `mohos_director` VALUES (2,'mikael håfström','mikael-hafstrom');
@@ -2024,6 +2028,8 @@ INSERT INTO `mohos_director` VALUES (279,'Andy Wachowski','andy-wachowski');
 INSERT INTO `mohos_director` VALUES (280,'Lana Wachowski','lana-wachowski');
 INSERT INTO `mohos_director` VALUES (281,'Ang Lee','ang-lee');
 INSERT INTO `mohos_director` VALUES (282,'Andrew Dominik','andrew-dominik');
+INSERT INTO `mohos_director` VALUES (283,'Elizabeth Banks','elizabeth-banks');
+INSERT INTO `mohos_director` VALUES (284,'Steven Brill','steven-brill');
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_genre` (
@@ -2067,7 +2073,7 @@ CREATE TABLE `mohos_moho` (
   `imageURL` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `imdbURL` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=386 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=387 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_moho` VALUES (13,'2011-08-19 12:30:12',0,1,'The Walking Dead','the-walking-dead','Вы могли бы себе представить Санта Барбару в мире, зараженном зомби вирусом? Я тоже не мог до просмотра Walking Dead. Для многих задротов, читавших оригинальный комикс, сериал стал самым большим разочарованием года, что касаемо меня, то вердикт прост: первоклассное говно. Вообще, сериал про живых мертвецов испортить сложно, но тут нарушили основную пропорцию, заполнив 90% времени розовыми соплями. Ну а 10% с зомбаками очень хороши, только все должно было быть наоборот. Не смотреть.',2010,'moho/e35ba37ac200e3640a0ff915612c1ef7.jpg','http://www.imdb.com/title/tt1520211/');
 INSERT INTO `mohos_moho` VALUES (14,'2011-08-19 12:30:12',1,1,'Mindhunters','mindhunters','Эталон триллера. Именно так и нужно снимать кино про серийных убийц для щекотания нервов. Этот фильм можно отнести к категории, когда кажется, что убийца - садовник, а в самом конце оказывается, что нихуя. Раз так 5 хорошо дергает от эффекта неожиданности, жаль все именитые актеры погибают практически в самом начале. Кто не смотрел - советую, этот фильм стал уже классикой своего жанра.',2004,'moho/5517f7e404c2073c449e8d33b09dce3e.jpg','http://www.imdb.com/title/tt0297284/');
@@ -2422,6 +2428,7 @@ INSERT INTO `mohos_moho` VALUES (382,'2013-01-13 20:16:41',1,1,'Cloud Atlas','cl
 INSERT INTO `mohos_moho` VALUES (383,'2013-01-16 11:49:04',0,1,'Life of Pi','life-of-pi','Знаете, что хуже смысловой пустоты, пресности и вторичности современного кинематографа? Напыщенность и морализаторство, псевдофилософия, которую пытаются продавать лениво жующему попкорн зрителю в новомодном формате 3D и долби диджитал. Мне было противно и я чувствовал себя обманутым. Ведь я купил билеты на очередную красивую интерпретацию сказки про Маугли в исполнении лучших актеров Болливуда, как бы это смешно не звучало, а попал на собрание каких-то практикующих Свидетелей Иеговы, где с помощью схоластической примитивной риторики меня безуспешно попытались убедить в том, что вера, а не набор для выживания, найденный парнем в лодке, - единственное, что помогает оставаться в живых и не сдаваться. Фильм выступил даже не пропагандой, а скорее дискредитацией религиозности. У юного индийца гибнет вся семья, он оказывается в лодке с бенгальским тигром, они попадают в шторм, лишаются всей жратвы, несколько раз находятся на грани смерти, а парень аки макака прыгает в своей шлюпке, вопрошая у небес: \"боженька, ну что ж еще тебе от меня надобно\". Быть может, умение мыслить логически, нет? Смотреть скучно - большую часть фильма вы будете наблюдать борьбу худощавого цыганенка и тигра с морской болезнью и голодом, концовка же окончательно убьет оставшийся шарм сказки. Невозможно снять нормальное кино, где рефлексивный юмор про \"писюны\" будут чередоваться с рассуждениями о разумном замысле. Не смотреть.',2012,'moho/MV5BNTg2OTY2ODg5OF5BMl5BanBnXkFtZTcwODM5MTYxOA._V1._SY317_.jpg','http://www.imdb.com/title/tt0454876/');
 INSERT INTO `mohos_moho` VALUES (384,'2013-01-16 22:29:42',0,1,'Argo','argo','Я сходил и вымыл рот хозяйственным мылом, а привкус приторно сладкого все никак не уйдет. Фильм, между прочим, появился в прокате как нельзя кстати, ну с геополитической точки зрения. До этого момента тема Ближнего Востока и Арабской весны была некоторым табу в популярном кинематографе, как вдруг операция Арго взрывает кинопрокат, кинокритики аплодируют стоя, а Бен Аффлек прижимает к груди Золотой Глобус, обворожительно улыбаясь. Про сюжет говорить не берусь, все же эта история, несмотря на ее некоторую фантастичность, произошла на самом деле, но вот исполнение лично мне показалось слишком мемориальным, разве что никого не убили, показав сцену похорон с почетным караулом и стрельбой гвардейцев в воздух. За все время просмотра не было ни единого момента, который бы вызвал какое-то напряжение или хотя бы заставил усомниться в том, что у ушлого красавчика Бена получится увезти дипломатов из страны злых обезьянок с калашниковыми, а именно так и представляются режиссеру иранцы. Фильм однобокий и явно рассчитан на массовое восприятие. Тут вам и сопливые сцены с семейными драмами (я не успел попращаться со своим сыном, а я вообще своих дочурок по разу в год вижу), и обнимашки на фоне звездно-полосатого флага, и даже вступительная история про злого шаха и не менее злого аятоллу стилизована под комикс. Если отбросить эти теории заговора с информационной войной, то фильм просто скучный, что  следует из его жанра. Разве что Джон Гудман и Алан Аркин с их историями про голливудскую кухню немного тянут кино. Не смотреть, а то ненароком можно про spangled banner завыть.',2012,'moho/MV5BMTc3MjI0MjM0NF5BMl5BanBnXkFtZTcwMTYxMTQ1OA._V1._SY317_CR00214317_.jpg','http://www.imdb.com/title/tt1024648/');
 INSERT INTO `mohos_moho` VALUES (385,'2013-01-16 22:55:42',1,1,'Killing Them Softly','killing-them-softly','Фильм мне очень понравился, но советовать я его, пожалуй, не буду - такой вот парадокс. А все потому что это кино разговорного жанра, не обманывайтесь, взглянув на зловещего Бреда Питта на постере с помповым ружьем в руках или прочитав фантазии местных локализаторов про ограбление века в казино. Да, так и есть, 90% времени на экране находятся всего два-три актера, которые будут обсуждать секс, наркотики, убийства, работу, политику, семейные проблемы, дела бизнеса и прочее под звуки телевизора, который вещает предвыборные речи Буша и Обамы, что, как вы догадались, никак не соотносится с жанром криминального триллера. Несмотря на все вышесказанное, фильм смотрится великолепно и увлекательно, по крайней мере, так смотрел его я. Причина тому - хорошо проработанные образы посыльного мафии, которая в алчной погоне за огромными делами превратилась в оторванную от жизни корпорацию, образ наемных убийц, один из которых своеобразно переживает кризис среднего возраста, а второй нехотя выполняет работу, следуя пустым принципам, шпана, которая решает провернуть на первый взгляд денежное и простое дельце, выкопав тем самым себе могилу - абсолютно все персонажи интересны и непохожи, а роли исполняют опытные именитые актеры. Повторюсь, многим фильм покажется скучным, а мне такая стилизация под нео-нуар в машинах, музыке, оружии, сюжете и диалогах пришлась по душе. Смотреть, но только если вы не ждете очередное кино про ограбления казино в стиле друзей Оушена. ',2012,'moho/MV5BODk3MDg2NDk5M15BMl5BanBnXkFtZTcwMjcxMjMzOA._V1._SY317_CR10214317_.jpg','http://www.imdb.com/title/tt1764234/');
+INSERT INTO `mohos_moho` VALUES (386,'2013-01-27 10:13:25',0,1,'Movie 43','movie-43','Сначала был очередной фильм Саши Коэна - <a href=\"/moho/2012/the-dictator.html\">The Dictator</a>, который лично мне не понравился, что не отменяет факт наличия в нем многих удачных тонких и смешных политизированных шуток. Потом случился <a href=\"/moho/2012/ted.html\">Ted</a>, проба пера Сэта МакФарлейна на поприще кинематографа, к нему я тоже прикопался по причине сортирности, переоцененности ожиданий и посредственного юмора. Как я был не прав, друзья. Эти ребята, Саша и Сет, фактически святые. Я впервые видел, чтобы после просмотра из кинозала выходили полнейшие люмпены, коих в моем городе подавляющее большинство, и плевались. Создатели фильма обещали разрыв шаблона и он случился, такого тупого говна с участием известных физиономий не мог представить себе никто. Этот фильм и правда не имеет себе аналогов, это даже не фильм, а набор буквально никак не связанных коротких скетчей от 10 разных режиссеров с жопно-вагинальным юмором, расизмом, сексизмом и просто глупыми шутками. Была пара удачных новелл, но все оставшееся время зрителя пытаются то ли шокировать, то ли удивить отсутствием планки. Никому не верьте - в трейлере и правда были самые удачные шутки, все оставшееся экранное время вас будут кормить дерьмом. Лучше пойти под мост к подыхающим от холода и крокодила бомжам наркоманам, даже такой трип принесет вам больше радости и счастья, чем посещение кинотеатра с Movie 43.',2013,'moho/MV5BMTg4NzQ3NDM1Nl5BMl5BanBnXkFtZTcwNjEzMjM3OA._V1._SY317_.jpg','http://www.imdb.com/title/tt1333125/');
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_moho_actors` (
@@ -2432,7 +2439,7 @@ CREATE TABLE `mohos_moho_actors` (
   UNIQUE KEY `moho_id` (`moho_id`,`actor_id`),
   KEY `mohos_moho_actors_9a5540fd` (`moho_id`),
   KEY `mohos_moho_actors_5066dfde` (`actor_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4166 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4222 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_moho_actors` VALUES (1,119,1);
 INSERT INTO `mohos_moho_actors` VALUES (2,120,2);
@@ -3798,6 +3805,14 @@ INSERT INTO `mohos_moho_actors` VALUES (4163,385,819);
 INSERT INTO `mohos_moho_actors` VALUES (4160,385,172);
 INSERT INTO `mohos_moho_actors` VALUES (4164,385,820);
 INSERT INTO `mohos_moho_actors` VALUES (4162,385,817);
+INSERT INTO `mohos_moho_actors` VALUES (4219,386,60);
+INSERT INTO `mohos_moho_actors` VALUES (4215,386,821);
+INSERT INTO `mohos_moho_actors` VALUES (4216,386,822);
+INSERT INTO `mohos_moho_actors` VALUES (4217,386,823);
+INSERT INTO `mohos_moho_actors` VALUES (4214,386,623);
+INSERT INTO `mohos_moho_actors` VALUES (4221,386,319);
+INSERT INTO `mohos_moho_actors` VALUES (4218,386,824);
+INSERT INTO `mohos_moho_actors` VALUES (4220,386,798);
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_moho_directors` (
@@ -3808,7 +3823,7 @@ CREATE TABLE `mohos_moho_directors` (
   UNIQUE KEY `moho_id` (`moho_id`,`director_id`),
   KEY `mohos_moho_directors_9a5540fd` (`moho_id`),
   KEY `mohos_moho_directors_81c0b88c` (`director_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=966 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=980 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_moho_directors` VALUES (1,137,1);
 INSERT INTO `mohos_moho_directors` VALUES (2,120,2);
@@ -4178,6 +4193,8 @@ INSERT INTO `mohos_moho_directors` VALUES (931,382,278);
 INSERT INTO `mohos_moho_directors` VALUES (944,383,281);
 INSERT INTO `mohos_moho_directors` VALUES (957,384,24);
 INSERT INTO `mohos_moho_directors` VALUES (965,385,282);
+INSERT INTO `mohos_moho_directors` VALUES (978,386,283);
+INSERT INTO `mohos_moho_directors` VALUES (979,386,284);
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_moho_genres` (
@@ -4188,7 +4205,7 @@ CREATE TABLE `mohos_moho_genres` (
   UNIQUE KEY `moho_id` (`moho_id`,`genre_id`),
   KEY `mohos_moho_genres_9a5540fd` (`moho_id`),
   KEY `mohos_moho_genres_f8d711d0` (`genre_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2602 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2609 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_moho_genres` VALUES (1,125,1);
 INSERT INTO `mohos_moho_genres` VALUES (2,128,1);
@@ -5226,3 +5243,4 @@ INSERT INTO `mohos_moho_genres` VALUES (2575,384,1);
 INSERT INTO `mohos_moho_genres` VALUES (2601,385,6);
 INSERT INTO `mohos_moho_genres` VALUES (2600,385,11);
 INSERT INTO `mohos_moho_genres` VALUES (2599,385,1);
+INSERT INTO `mohos_moho_genres` VALUES (2608,386,12);
