@@ -912,7 +912,7 @@ CREATE TABLE `mohos_actor` (
   `slug` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `mohos_actor_a951d5d6` (`slug`)
-) ENGINE=MyISAM AUTO_INCREMENT=830 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=848 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_actor` VALUES (1,'amy adams','amy-adams');
 INSERT INTO `mohos_actor` VALUES (2,'anthony hopkins','anthony-hopkins');
@@ -1741,6 +1741,24 @@ INSERT INTO `mohos_actor` VALUES (826,'Nadine Velazquez','nadine-velazquez');
 INSERT INTO `mohos_actor` VALUES (827,'Don Johnson','don-johnson');
 INSERT INTO `mohos_actor` VALUES (828,'Ralph Fiennes','ralph-fiennes');
 INSERT INTO `mohos_actor` VALUES (829,'Naomie Harris','naomie-harris');
+INSERT INTO `mohos_actor` VALUES (830,'Eddie Redmayne','eddie-redmayne');
+INSERT INTO `mohos_actor` VALUES (831,'Aaron Tveit','aaron-tveit');
+INSERT INTO `mohos_actor` VALUES (832,'Samantha Barks','samantha-barks');
+INSERT INTO `mohos_actor` VALUES (833,'Daniel Huttlestone','daniel-huttlestone');
+INSERT INTO `mohos_actor` VALUES (834,'David Wenham','david-wenham');
+INSERT INTO `mohos_actor` VALUES (835,'Jack Thompson','jack-thompson');
+INSERT INTO `mohos_actor` VALUES (836,'Bryan Brown','bryan-brown');
+INSERT INTO `mohos_actor` VALUES (837,'David Gulpilil','david-gulpilil');
+INSERT INTO `mohos_actor` VALUES (838,'Eva Longoria','eva-longoria');
+INSERT INTO `mohos_actor` VALUES (839,'Clayne Crawford','clayne-crawford');
+INSERT INTO `mohos_actor` VALUES (840,'Travis Fimmel','travis-fimmel');
+INSERT INTO `mohos_actor` VALUES (841,'Daniel Cudmore','daniel-cudmore');
+INSERT INTO `mohos_actor` VALUES (842,'Thomas Brodie-Sangster','thomas-brodie-sangster');
+INSERT INTO `mohos_actor` VALUES (843,'Andre Braugher','andre-braugher');
+INSERT INTO `mohos_actor` VALUES (844,'Paul Wesley','paul-wesley');
+INSERT INTO `mohos_actor` VALUES (845,'Maura Tierney','maura-tierney');
+INSERT INTO `mohos_actor` VALUES (846,'George Dzundza','george-dzundza');
+INSERT INTO `mohos_actor` VALUES (847,'John Ashton','john-ashton');
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_director` (
@@ -1749,7 +1767,7 @@ CREATE TABLE `mohos_director` (
   `slug` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `mohos_director_a951d5d6` (`slug`)
-) ENGINE=MyISAM AUTO_INCREMENT=285 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=288 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_director` VALUES (1,'tom dey','tom-dey');
 INSERT INTO `mohos_director` VALUES (2,'mikael håfström','mikael-hafstrom');
@@ -2035,6 +2053,9 @@ INSERT INTO `mohos_director` VALUES (281,'Ang Lee','ang-lee');
 INSERT INTO `mohos_director` VALUES (282,'Andrew Dominik','andrew-dominik');
 INSERT INTO `mohos_director` VALUES (283,'Elizabeth Banks','elizabeth-banks');
 INSERT INTO `mohos_director` VALUES (284,'Steven Brill','steven-brill');
+INSERT INTO `mohos_director` VALUES (285,'Baz Luhrmann','baz-luhrmann');
+INSERT INTO `mohos_director` VALUES (286,'Barry Battles','barry-battles');
+INSERT INTO `mohos_director` VALUES (287,'Jon Turteltaub','jon-turteltaub');
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_genre` (
@@ -2078,7 +2099,7 @@ CREATE TABLE `mohos_moho` (
   `imageURL` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `imdbURL` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=391 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=395 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_moho` VALUES (13,'2011-08-19 12:30:12',0,1,'The Walking Dead','the-walking-dead','Вы могли бы себе представить Санта Барбару в мире, зараженном зомби вирусом? Я тоже не мог до просмотра Walking Dead. Для многих задротов, читавших оригинальный комикс, сериал стал самым большим разочарованием года, что касаемо меня, то вердикт прост: первоклассное говно. Вообще, сериал про живых мертвецов испортить сложно, но тут нарушили основную пропорцию, заполнив 90% времени розовыми соплями. Ну а 10% с зомбаками очень хороши, только все должно было быть наоборот. Не смотреть.',2010,'moho/e35ba37ac200e3640a0ff915612c1ef7.jpg','http://www.imdb.com/title/tt1520211/');
 INSERT INTO `mohos_moho` VALUES (14,'2011-08-19 12:30:12',1,1,'Mindhunters','mindhunters','Эталон триллера. Именно так и нужно снимать кино про серийных убийц для щекотания нервов. Этот фильм можно отнести к категории, когда кажется, что убийца - садовник, а в самом конце оказывается, что нихуя. Раз так 5 хорошо дергает от эффекта неожиданности, жаль все именитые актеры погибают практически в самом начале. Кто не смотрел - советую, этот фильм стал уже классикой своего жанра.',2004,'moho/5517f7e404c2073c449e8d33b09dce3e.jpg','http://www.imdb.com/title/tt0297284/');
@@ -2437,6 +2458,10 @@ INSERT INTO `mohos_moho` VALUES (386,'2013-01-27 10:13:25',0,1,'Movie 43','movie
 INSERT INTO `mohos_moho` VALUES (387,'2013-02-10 19:28:52',0,1,'Flight','flight','Скучнейшее кино, моего терпения с трудом хватило до приторной финальной сцены, пришлось потом смотреть снафф и гуро в целях профилактики чтобы хоть как-то разбавить концентрат ванили в крови. Что на самом деле получилось у Земекиса и Дензела великолепно, так это сцена падения самолета. Сделано качественно, очень реалистично, пробирает до потных ладоней, нервно сжимающих пульт, и вроде как позитивно настраивает на дальнейшее развитие событий, вот только весь следующий за этим сюжет в итоге сводится к поиску себя первым пилотом, который любит перед вылетом втянуть пару дорожек, запив текилой. После 15 минут кино заканчивается и начинается театр. Все такое вялое и скучное, шаблонное, семейные драмы разведенышей, наркоманка - идеалистка, которая смогла бросить долбить в вену с помощью встреч в методистской церки с себе подобными, оптимистичный онкобольной с сигареткой, усатенький пилотик, рассказывающий, что в день катастрофы за рулем боинга сидел сам бог. На фоне всего этого гипертрофированного маразма герой Джона Гудмана, лечащий похмелье носовым порошком, смотрится уже просто комично. Ну и финальная сцена встречи с сыном в тюремном дворике - верх пафосной бездарности, разве что финального поцелуя в кабриолете на фоне заката не хватило. Фильмы про наркоманов все же веселее аналогичных историй про алкоголиков будут.',2012,'moho/MV5BMTUxMjI1OTMxNl5BMl5BanBnXkFtZTcwNjc3NTY1OA._V1_SY317_CR00214317_.jpg','http://www.imdb.com/title/tt1907668/');
 INSERT INTO `mohos_moho` VALUES (389,'2013-02-10 19:52:38',1,1,'Django Unchained','django-unchained','Уверен, я никого не удивлю, сказав, что фильм мне невероятно понравился. Джанго Освобожденный в той или иной мере приходится по вкусу абсолютно всем. Тут я не беру в учет тех эстетирующих зануд в широких шарфах и уникальных шапках с оленями, сипло брюзжащих в комментариях какого-то очередного зевилладжа или лукэтми о том, что старина Тарантино мол выдохся, ударившись в многократное самокопирование или же зажатых ханжей, падающих в обморок от вида человеческих жидких соединительных тканей и черного мужского полового хуя на большом экране. А еще, фильм, несмотря на преимущественно черный цвет кастлиста, пришелся не по вкусу самим афроамериканцам, которые выражали свое недовольство, подсчитав, сколько раз в кадре прозвучало то самое фирменное n-word. Но так же было и с Джеки Браун, и с Палп Фикшн - история не нова. Я же, лишенный всех этих недостатков, вышел из кинозала со стойким желанием пересмотреть Джанго еще, как минимум, разок, дождавшись оригинальной звуковой дорожки. Украинский дубляж, как впрочем и всегда, - жидкое толерантное околосмысловое говно. Да, быть может Квентин и правда намерено перегнул палку со сценами расчленения людей пулями и собаками, в определенные моменты смотреть на фонтанирующие клюквенным соком тела просто по-человечески неприятно, если вы не доктор станции переливания крови, но вы же не на фильм Алексея Учителя пришли, это такая визитная карточка режиссера, которая введена не просто для шокирования зрителя, но и имеет свой подтекст. Во всем остальном, это кино гениально - музыка, сюжет и конечно же актерская игра, кристаллы талантов Кристофа Вальца и Леонардо ДиКаприо, фирменные тарантиновские диалоги создают великолепный увлекательный букет из насилия, черного юмора, степной Америки, стеба и абсурда. Лучи бесконечного восторга и обожания, тот случай, когда слова \"джанго\", \"кино\", \"смотреть\" и \"обязательно\" как нельзя лучше описывают ваш вечерний досуг на следующий уикенд.',2012,'moho/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA._V1_SX214_.jpg','http://www.imdb.com/title/tt1853728/');
 INSERT INTO `mohos_moho` VALUES (390,'2013-02-12 11:54:18',0,1,'Skyfall','skyfall','Мои основные претензии к новому Бонду относятся не к качеству исполнения очередной серии (тут при таких-то бюджетах все более чем здорово), а к тому, во что превратили классику и законодателя мод шпионского кинематографа. Ну на самом деле, вот возьмите любую книгу, которой вы зачитывались в детстве. Агата Кристи, например. Представьте, что сначала вы насладились \"Убийством в Восточном экспрессе\", с удовольствием прочитали \"Трагедию в трех актах\", пытались понять, кто же убийца в \"Десяти негритятах\", а потом вам попадается книга, где вроде и Эркюль Пуаро с тростью, в котелке, но в самой первой главе он убивает 7 человек, раздавив их машиной в мясное пюре, прыгает на мотоцикле с моста на крышу поезда, а потом, провалив расследование, бухает текилу с аборигенами. Вот так и с Бондом, после Die Another Day утонченного британца на службе Ее Высочества, который брал не столько грубой силой, сколько смекалкой и обаянием, превратили в усредненного супергероя боевика, которых тысячи: Борн, Итан Хант из Mission Impossible, Пол Уокер из Форсажа, Анжелина \"Солт\" Джоли - все они такие же безликие неуязвимые персонажи. А мотивация? Раньше 007 спасал мир, а теперь защищает черствую старуху, которая все равно откинется под конец для драмматизма момента, дав Джеймсу возможность поплакать. Фильм может и не плохой, но это не Бонд, для меня секретный агент умер, бросив пить водку с мартини, встряхнуть, но не смешивать. Остался очередной мускулистый блондинистый перонаж с пустыми глазами и небритой ушастой рожей испитого алкаша, пускай и в костюме.',2012,'moho/MV5BMjM1MzMzOTA3MV5BMl5BanBnXkFtZTcwOTE3NzA1OA._V1_SX214_.jpg','http://www.imdb.com/title/tt1074638/');
+INSERT INTO `mohos_moho` VALUES (391,'2013-02-19 10:17:41',1,1,'Les Miserables','les-miserables','Честно говоря, я был приятно удивлен качеством экранизации произведения Гюго и мюзиклом в виде жанра для большого экрана. За всю свою жизнь я смотрел не так уж много фильмов, где вместо диалогов люди забавно поют: \"Бриолин\" с молодым Траволтой, конечно же попсовый \"Мулин руж\" и отличную \"Генетическую оперу\". Вот и все, пожалуй. И вряд ли бы прошел на \"Отверженных\", не будь в кастлисте дуэта Кроу-Джекман, которые, к тому же, поют своими голосами. Между нами, девочками, я свято верил, что в подобных фильмах известные актеры просто открывают рты, а потом, в недрах студий, за них страдают в микрофон профессиональные солисты, имена которых мелькают в титрах, но их все равно никто не читает. А оказалось, что талантливые люди талантливы во всем. Фильм немного затянут, 2 с половиной часа сложно высидеть физически, но это единственная моя претензия, во всем остальном киносага мне понравилась. Это очень приятный и правильный тренд с экранизацией классики. Я так понимаю, в Голливуде просто закончились марвеловские комиксы, а пересъемки всяких <a href=\"/moho/2012/the-amazing-spider-man.html\">Человеков Пауков</a> не приносят ожидаемых гиперприбылей, вот ребята и решили рискнуть. С \"Анной Карениной\" не получилось, фильм едва отбил свой бюджет, а вот \"Отверженные\" собрали 340 миллионов при скромных по современным меркам 60 лимонах вложений. А это значит, что в скором времени мы увидим еще как минимум пару-тройку попыток переноса классики литературы на киноэкран. И это, я повторюсь, здорово. Всякие зомби сеттинги и футуристические пейзажи с летающими машинами или киборгами уже просто приелись.',2012,'moho/MV5BMTQ4NDI3NDg4M15BMl5BanBnXkFtZTcwMjY5OTI1OA._V1_SX214_.jpg','http://www.imdb.com/title/tt1707386/');
+INSERT INTO `mohos_moho` VALUES (392,'2013-02-19 11:04:51',0,1,'Australia','australia','Скучное кино, которое нужно было оборвать на полуслове. Ну правда, начинается все достаточно свежо и многообещающе - аристократичная леди, Николь Кидман, прилетает с 10ю чемоданами из туманной Британии прямиком в солнечную Австралию в помощь к своему благоверному мужу, которого она находит в состоянии \"труп недельной давности\" на грязном ранчо где-то в знойных песках шестого континента без центрального водоснабжения и канализации. Но деньги и честь, сами понимаете, важнее скорби и уже на следующий день, оправившись от неутолимого горя вдовы, наша юная леди, приняв на грудь, решает завязать отношения с небритым погонщиком скота Джекманом и, прихватив нелегально присвоенного отпрыска аборигенов и рыжего ирландского пьяницу бухгалтера, решает погнать огромное стадо скота на продажу британским военным. Законы рынка и отсутствие антимонопольного законодательства играют злую шутку, всю дорогу им пытаются испортить жизнь конкуренты. Но, как и во всех фильмах, где главные герои - высокооплачиваемые актеры и посему обязаны дожить до финальной сцены, умирает только пьяный ирландец, скот доставляется в срок, экшн, погони на лошадях, пыль дорог - все дела. И вот тут должны были начаться титры, но, вдохновившись творчеством Дюма, режиссер решается снимать \"надцать лет спустя\". Начинаются настоящие пиздострадания с семейными драмами, цыганенком, который бежит от цивилизации к своему странному деду бушмену, а тут еще япошки решают побомбить бледнолицых. В двух словах, смотреть скучно, одна история накладывается на другую, образуя сюжетную кашу. А ведь мог бы быть вполне неплохой фильм, закончи они первую часть словами \"и жили они долго и счастливо\".',2008,'moho/MV5BMjAzNTk5NzczMV5BMl5BanBnXkFtZTcwNzI5NTk5MQ._V1_SY317_CR10214317_.jpg','http://www.imdb.com/title/tt0455824/');
+INSERT INTO `mohos_moho` VALUES (393,'2013-02-19 11:51:42',1,1,'The Baytown Outlaws','the-baytown-outlaws','Первоклассная такая трешня и рубилово. Сюжет сведен до возможного минимума: три здоровенных брата, истинные реднеки из южного штата, зарабатывают массовыми убийствами людей. Бизнес, конечно, так себе, но благодаря отсутствию мозга, храбрости и покровительству местного шерифа, им получается выходить сухими из воды вплоть до момента, пока их не нанимает Ева Лангория, требуя забрать своего крестного сынишку дцпшника из лап кровожадного гангстера в исполнении Билли Боб Торнтона. И вот тут уже начинается полный отрыв, троицу сперва преследуют \"бешенные сучки\" - команда супершлюх, убивающих клиентов, индустриальные негроготопанки, коренные американцы на байках с черепами и все они с помощью оружия разных калибров пытаются отобрать колясочного инвалида у братьев, которые в процессе влюбляются в этого паренька. Изгои из Бэйтауна - 98 минут гротеска, где индейцы снимают скальпы, разговаривая по телефону, людей от выстрелов дробовиков вплотную относит на несколько метров, а немой громила с ухмылкой на лице ломает шею очередной девушке с агрессивным макияжем. Сомневаюсь, что создатели фильма рассчитывали на какой-нибудь там кинопрокат и вот именно поэтому у них получился качественный такой b movie. Даже не знаю, кому и советовать этот фильм, это как Expendables, разве что без Сталлоне.',2012,'moho/MV5BMTM5NzE0ODIwMV5BMl5BanBnXkFtZTcwMzY5Mjg3OA._V1_SY317_CR00214317_.jpg','http://www.imdb.com/title/tt1836944/');
+INSERT INTO `mohos_moho` VALUES (394,'2013-02-23 22:07:34',1,1,'Instinct','instinct','Первоклассный психологический триллер с элементами драмы. Противостояние возрастов и накал напомнили мне о фильме <a href=\"http://www.mindcollapse.com/moho/2007/fracture.html\">Fracture</a>, разве что тут в качестве оппонента таланту, обаянию и безграничной харизме Энтони Хопкинса выступает молодой и амбициозный эксперт судебной психиатрии в качественном исполнении Кубы Гудинга. К сожалению, этот фильм, будучи много достойней того говна, которое децилитрами переиздается в HD, на этих ваших блюреях не выходил, поэтому пришлось довольствоваться обычным DVD рипом и вот что я вам скажу: фильм получает мой личный оскар в номинации наилучший взгляд исподлобья в исполнении сэра, парочку золотых глобусов за поставленную проблематику, ее развитие и решение, охапку пальмовых ветвей за трагизм и психологически тяжелые сцены. Впрочем, не обошлось и без золотых малин с rotten tomatoes - психбольница и ее обитатели воссозданы комично и крайне неубедительно, а побег доктора антропологии из тюрьмы прямиком в Руанду, имея в своем арсенале лишь металлическую шариковую ручку, подмочил репутацию сценаристов. Но чего не простишь старине Хопкинсу, который так искренне играет чистое животное безумие одними лишь глазами. Очень хороший недооцененный зрителями и критиками, а потому и забытый, фильм.',1999,'moho/MV5BMTM4MDc3MjExNl5BMl5BanBnXkFtZTcwMjg3OTMyMQ._V1_SY317_CR30214317_.jpg','http://www.imdb.com/title/tt0128278/');
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_moho_actors` (
@@ -2447,7 +2472,7 @@ CREATE TABLE `mohos_moho_actors` (
   UNIQUE KEY `moho_id` (`moho_id`,`actor_id`),
   KEY `mohos_moho_actors_9a5540fd` (`moho_id`),
   KEY `mohos_moho_actors_5066dfde` (`actor_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4406 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4662 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_moho_actors` VALUES (1,119,1);
 INSERT INTO `mohos_moho_actors` VALUES (2,120,2);
@@ -3837,6 +3862,36 @@ INSERT INTO `mohos_moho_actors` VALUES (4403,390,828);
 INSERT INTO `mohos_moho_actors` VALUES (4402,390,746);
 INSERT INTO `mohos_moho_actors` VALUES (4401,390,684);
 INSERT INTO `mohos_moho_actors` VALUES (4404,390,333);
+INSERT INTO `mohos_moho_actors` VALUES (4541,391,831);
+INSERT INTO `mohos_moho_actors` VALUES (4540,391,830);
+INSERT INTO `mohos_moho_actors` VALUES (4539,391,572);
+INSERT INTO `mohos_moho_actors` VALUES (4538,391,447);
+INSERT INTO `mohos_moho_actors` VALUES (4537,391,57);
+INSERT INTO `mohos_moho_actors` VALUES (4536,391,821);
+INSERT INTO `mohos_moho_actors` VALUES (4535,391,20);
+INSERT INTO `mohos_moho_actors` VALUES (4534,391,71);
+INSERT INTO `mohos_moho_actors` VALUES (4533,391,833);
+INSERT INTO `mohos_moho_actors` VALUES (4532,391,832);
+INSERT INTO `mohos_moho_actors` VALUES (4590,392,834);
+INSERT INTO `mohos_moho_actors` VALUES (4591,392,835);
+INSERT INTO `mohos_moho_actors` VALUES (4592,392,836);
+INSERT INTO `mohos_moho_actors` VALUES (4593,392,837);
+INSERT INTO `mohos_moho_actors` VALUES (4594,392,276);
+INSERT INTO `mohos_moho_actors` VALUES (4595,392,821);
+INSERT INTO `mohos_moho_actors` VALUES (4619,393,844);
+INSERT INTO `mohos_moho_actors` VALUES (4613,393,839);
+INSERT INTO `mohos_moho_actors` VALUES (4614,393,840);
+INSERT INTO `mohos_moho_actors` VALUES (4615,393,841);
+INSERT INTO `mohos_moho_actors` VALUES (4616,393,842);
+INSERT INTO `mohos_moho_actors` VALUES (4617,393,843);
+INSERT INTO `mohos_moho_actors` VALUES (4612,393,838);
+INSERT INTO `mohos_moho_actors` VALUES (4618,393,268);
+INSERT INTO `mohos_moho_actors` VALUES (4661,394,625);
+INSERT INTO `mohos_moho_actors` VALUES (4660,394,847);
+INSERT INTO `mohos_moho_actors` VALUES (4658,394,845);
+INSERT INTO `mohos_moho_actors` VALUES (4657,394,43);
+INSERT INTO `mohos_moho_actors` VALUES (4656,394,2);
+INSERT INTO `mohos_moho_actors` VALUES (4659,394,846);
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_moho_directors` (
@@ -3847,7 +3902,7 @@ CREATE TABLE `mohos_moho_directors` (
   UNIQUE KEY `moho_id` (`moho_id`,`director_id`),
   KEY `mohos_moho_directors_9a5540fd` (`moho_id`),
   KEY `mohos_moho_directors_81c0b88c` (`director_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1014 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=1047 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_moho_directors` VALUES (1,137,1);
 INSERT INTO `mohos_moho_directors` VALUES (2,120,2);
@@ -4222,6 +4277,10 @@ INSERT INTO `mohos_moho_directors` VALUES (979,386,284);
 INSERT INTO `mohos_moho_directors` VALUES (1000,387,17);
 INSERT INTO `mohos_moho_directors` VALUES (1001,389,125);
 INSERT INTO `mohos_moho_directors` VALUES (1013,390,36);
+INSERT INTO `mohos_moho_directors` VALUES (1027,391,51);
+INSERT INTO `mohos_moho_directors` VALUES (1036,392,285);
+INSERT INTO `mohos_moho_directors` VALUES (1039,393,286);
+INSERT INTO `mohos_moho_directors` VALUES (1046,394,287);
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mohos_moho_genres` (
@@ -4232,7 +4291,7 @@ CREATE TABLE `mohos_moho_genres` (
   UNIQUE KEY `moho_id` (`moho_id`,`genre_id`),
   KEY `mohos_moho_genres_9a5540fd` (`moho_id`),
   KEY `mohos_moho_genres_f8d711d0` (`genre_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2697 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2803 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 INSERT INTO `mohos_moho_genres` VALUES (1,125,1);
 INSERT INTO `mohos_moho_genres` VALUES (2,128,1);
@@ -5278,3 +5337,15 @@ INSERT INTO `mohos_moho_genres` VALUES (2658,389,1);
 INSERT INTO `mohos_moho_genres` VALUES (2696,390,5);
 INSERT INTO `mohos_moho_genres` VALUES (2695,390,4);
 INSERT INTO `mohos_moho_genres` VALUES (2694,390,11);
+INSERT INTO `mohos_moho_genres` VALUES (2752,391,14);
+INSERT INTO `mohos_moho_genres` VALUES (2751,391,18);
+INSERT INTO `mohos_moho_genres` VALUES (2749,391,1);
+INSERT INTO `mohos_moho_genres` VALUES (2750,391,2);
+INSERT INTO `mohos_moho_genres` VALUES (2777,392,1);
+INSERT INTO `mohos_moho_genres` VALUES (2778,392,5);
+INSERT INTO `mohos_moho_genres` VALUES (2779,392,14);
+INSERT INTO `mohos_moho_genres` VALUES (2786,393,4);
+INSERT INTO `mohos_moho_genres` VALUES (2787,393,11);
+INSERT INTO `mohos_moho_genres` VALUES (2788,393,12);
+INSERT INTO `mohos_moho_genres` VALUES (2801,394,1);
+INSERT INTO `mohos_moho_genres` VALUES (2802,394,6);
