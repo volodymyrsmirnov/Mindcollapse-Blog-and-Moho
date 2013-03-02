@@ -70,14 +70,6 @@ def id(request, id):
 	except:
 		raise Http404
 
-def id_pdf(request, id):
-	template_vars = {}
-	try:
-		Post.objects.get(id=id)
-		return HttpResponsePermanentRedirect("https://api.joliprint.com/api/rest/url/print?url=http://www.mindcollapse.com%s" % reverse('blogs.views.id', None, [str(id)]))
-	except:
-		raise Http404
-
 def tag(request, tag, page=1):
 	template_vars = {}
 		
