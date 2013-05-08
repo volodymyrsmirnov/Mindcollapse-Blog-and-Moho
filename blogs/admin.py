@@ -2,11 +2,12 @@ from blogs.models import Post, Tag
 from django.contrib import admin
 
 class TagAdmin (admin.ModelAdmin):
-
 	save_on_top = True
 	list_per_page = 50
 	
-	prepopulated_fields = {"slug": ("name",)}
+	prepopulated_fields = {
+		"slug": ("name",)
+	}
 	
 	def titlezed(obj):
 		return obj.name.title()
@@ -22,11 +23,10 @@ class TagAdmin (admin.ModelAdmin):
 	search_fields = ['name']
 
 class PostAdmin(admin.ModelAdmin):
-
 	list_display = ('id', 'title', 'createdAt', 'visible')
 	list_filter = ('visible',)
 	
-	fields = ('title','text', 'visible', 'createdAt', 'tags')
+	fields = ('title', 'slug', 'text', 'visible', 'createdAt', 'tags')
 	
 	filter_horizontal = ['tags']
 	
@@ -37,8 +37,18 @@ class PostAdmin(admin.ModelAdmin):
 	ordering = ('-id',)
 	
 	class Media: 
-		css = {"all": ("/static/admin/general.css", "/static/admin/redactor/redactor.css")}
-		js = ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", "/static/admin/redactor/redactor.js", "/static/admin/general.js")
+		css = {
+			"all": (
+				"/static/admin/general.css", 
+				"/static/admin/redactor/redactor.css"
+			)
+		}
+
+		js = (
+			"https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js", 
+			"/static/admin/redactor/redactor.js", 
+			"/static/admin/general.js"
+		)
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Tag, TagAdmin)
