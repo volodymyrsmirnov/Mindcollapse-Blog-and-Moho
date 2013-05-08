@@ -87,7 +87,7 @@ def id(request, id, blog_post=None):
 	template_vars['og_post'] = blog_post
 	template_vars['title'] = blog_post.title
 
-	if blog_post.slug and id == None:
+	if blog_post.slug and not id == None:
 		return HttpResponsePermanentRedirect(reverse('blogs.views.slug', args=[blog_post.slug]))
 
 	return render_to_response (
