@@ -10,7 +10,7 @@
 		{% for post in posts%}
 		<item>
 			<title><![CDATA[{{post.title|safe}}]]></title>
-			<link>http://www.mindcollapse.com/blog/{{post.id}}.html</link>
+			<link>http://www.mindcollapse.com{{post.url}}</link>
 			<guid>http://www.mindcollapse.com/blog/{{post.id}}.html</guid>
 			<description>
 				<![CDATA[<div>{{post.text|safe}}</div>]]>

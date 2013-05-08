@@ -5,11 +5,12 @@ from django import forms
 from django.db import models
 
 class SubMohoAdmin(admin.ModelAdmin):
-
 	save_on_top = True
 	list_per_page = 50
 	
-	prepopulated_fields = {"slug": ("name",)}
+	prepopulated_fields = {
+		"slug": ("name",)
+	}
 	
 	def titlezed(obj):
 		return obj.name.title()
@@ -22,7 +23,8 @@ class SubMohoAdmin(admin.ModelAdmin):
 		elif type(obj) == Director:
 			return Moho.objects.filter(directors__slug=obj.slug).count()
 		else:
-			return 0 		
+			return 0
+
 	titlezed.short_description = 'Name'
 	countFilms.short_description = 'Attached to films'
 	
@@ -31,11 +33,6 @@ class SubMohoAdmin(admin.ModelAdmin):
 	search_fields = ['name']
 
 class MohoAdmin(admin.ModelAdmin):
-
-	#formfield_overrides = {
-	#	models.Field: {'widget': forms.TextInput},
-	#}
-
 	list_display = ('id', 'title', 'year', 'like', 'visible')
 	list_filter = ('like','visible', 'genres')
 	
@@ -60,8 +57,15 @@ class MohoAdmin(admin.ModelAdmin):
 	ordering = ('-id',)
 	
 	class Media: 
-		css = {"all": ("/static/admin/general.css", "/static/admin/redactor/redactor.css")}
-		js = ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", "/static/admin/redactor/redactor.js", "/static/admin/general.js")
+		css = {
+			"all": (
+				"/static/admin/general.css",
+			)
+		}
+
+		js = (
+			"https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js",
+		)
 	
 admin.site.register(Moho, MohoAdmin)
 admin.site.register(Actor, SubMohoAdmin)
