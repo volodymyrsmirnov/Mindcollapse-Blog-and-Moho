@@ -11,9 +11,9 @@
         <div class='information'>пост написан и отправлен в печать <span itemprop="dateCreated">{{post.createdAt|date:"Y-m-d"}}</span> примерно в <span title='со времени публикации прошло {{post.createdAt|timesince}}'>{{post.createdAt|date:"H:i"}}</span>
 
             <div class='social'>
-                <a target="_blank" href="http://vkontakte.ru/share.php?url=http://www.mindcollapse.com{% url 'blogs.views.id' id=post.id %}" class="vk" title="Share in Vkontakte"></a>
-                <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.mindcollapse.com{% url 'blogs.views.id' id=post.id %}" class="fb" title="Share in Facebook"></a>
-                <a target="_blank" href="http://twitter.com/share?url=http://www.mindcollapse.com{% url 'blogs.views.id' id=post.id %}&amp;text={{post.title|urlencode}}&amp;via=middlesizetit" class="tw" title="Share in Twitter"></a>
+                <a target="_blank" href="http://vkontakte.ru/share.php?url=http://www.mindcollapse.com{{post.url}}" class="vk" title="Share in Vkontakte"></a>
+                <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.mindcollapse.com{{post.url}}" class="fb" title="Share in Facebook"></a>
+                <a target="_blank" href="http://twitter.com/share?url=http://www.mindcollapse.com{{{post.url}}&amp;text={{post.title|urlencode}}&amp;via=middlesizetit" class="tw" title="Share in Twitter"></a>
 
                 <g:plusone href="http://www.mindcollapse.com{% url 'blogs.views.id' id=post.id %}" size="small" annotation="none"></g:plusone>
                 
