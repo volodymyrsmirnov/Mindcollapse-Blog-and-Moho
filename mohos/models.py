@@ -4,13 +4,13 @@ from django.db import models
 class Moho (models.Model):
 	createdAt = models.DateTimeField(auto_now_add=True)
 	
-	like = models.BooleanField()
-	visible = models.BooleanField(default=False, verbose_name="Published")
+	like = models.BooleanField(db_index=True)
+	visible = models.BooleanField(default=False, verbose_name="Published", db_index=True)
 	
 	title = models.CharField(max_length=128)
-	slug = models.SlugField()
+	slug = models.SlugField(db_index=True)
 	text = models.TextField()
-	year = models.PositiveSmallIntegerField(blank=True)
+	year = models.PositiveSmallIntegerField(blank=True, db_index=True)
 	
 	imageURL = models.FileField(upload_to='moho', verbose_name="Film poster", blank=True)
 	imdbURL = models.URLField(verbose_name="IMDB link", blank=True)
@@ -35,21 +35,21 @@ class Moho (models.Model):
 	
 class Genre(models.Model):
 	name = models.CharField(max_length=50)
-	slug = models.SlugField()
+	slug = models.SlugField(db_index=True)
 	
 	def __unicode__(self):
 		return self.name.capitalize()
 	
 class Actor(models.Model):
 	name = models.CharField(max_length=50)
-	slug = models.SlugField()
+	slug = models.SlugField(db_index=True)
 	
 	def __unicode__(self):
 		return self.name.title()
 
 class Director(models.Model):
 	name = models.CharField(max_length=50)
-	slug = models.SlugField()
+	slug = models.SlugField(db_index=True)
 	
 	def __unicode__(self):
 		return self.name.title()

@@ -4,9 +4,9 @@ from django.db import models
 
 class Post (models.Model):
 	createdAt = models.DateTimeField(verbose_name="Publication date")
-	visible = models.BooleanField(default=False, verbose_name="Published")
+	visible = models.BooleanField(default=False, verbose_name="Published", db_index=True)
 	title = models.CharField(max_length=128)
-	slug = models.CharField(max_length=128)
+	slug = models.CharField(max_length=128, db_index=True)
 	text = models.TextField()
 	tags = models.ManyToManyField('Tag', related_name='tags', blank=True)
 
@@ -21,7 +21,7 @@ class Post (models.Model):
 		
 class Tag(models.Model):
 	name = models.CharField(max_length=50)
-	slug = models.SlugField()
+	slug = models.SlugField(db_index=True)
 	
 	def __unicode__(self):
 		return self.name.capitalize()
