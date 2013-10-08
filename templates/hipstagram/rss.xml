@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>100% Organic Smoothie</title>
+	<subtitle>Vladimir Smirnov Instagram RSS</subtitle>
+
+	<link href="http://www.mindcollapse.com/instagram/rss.xml" rel="self" />
+    <link href="http://www.mindcollapse.com/instagram/" />
+
+    <id>http://www.mindcollapse.com/instagram/rss.xml</id>
+
+    <author>
+		<name>Vladimir Smirnov</name>
+		<email>mail@mindcollapse.com</email>
+		<uri>http://www.mindcollapse.com/</uri>
+    </author>
+
+	<updated>{{ media.0.created_time|date:"r" }}</updated>
+
+	{% for item in media %}
+		<entry>
+			<id>{{ item.link }}</id>
+			<updated>{{ item.created_time|date:"r" }}</updated>
+			<title>{{ item.caption.text }}</title>
+			<link rel="alternate" href="{{ item.link }}"/>
+			<content type="xhtml">
+				<div xmlns="http://www.w3.org/1999/xhtml">
+					<a target="_blank" href="{{ item.link }}" title="{{ item.caption.text }}">
+						<img alt="{{ item.caption.text }}" src="{{ item.images.standard_resolution.url }}" />
+					</a>
+
+					<p>
+						{{ item.caption.text }}
+
+						{% if item.location %}
+							@ <a target="_blank" href="https://maps.google.com/maps?q={{ item.location.point.latitude }},{{ item.location.point.longitude }}">на карте</a>
+						{% endif %}
+					</p>
+				</div>
+			</content>
+			{% for tag in item.tags %}
+				<category term="{{ tag.name }}"/>
+			{% endfor %}
+		</entry>
+	{% endfor %}
+</feed>

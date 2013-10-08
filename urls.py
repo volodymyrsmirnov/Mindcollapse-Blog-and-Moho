@@ -6,6 +6,9 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+	url(r'^instagram/$', 'hipstagram.views.index'), 
+	url(r'^instagram/rss\.xml$', 'hipstagram.views.rss'), 
+
 	url(r'^godmode/blog_upload_file$', 'blogs.views.upload_file'),
 	url(r'^godmode/blog_autosave_post$', 'blogs.views.autosave_post'),
 	url(r'^godmode/', include(admin.site.urls)), 
