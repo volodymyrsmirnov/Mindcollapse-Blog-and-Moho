@@ -3,7 +3,7 @@
 {% load pytils_dt %}
 
 {% block content %}
-	<ol class="archive">
+	<ol class="archive list-unstyled">
 		{% for post in posts %}
 			<li>
 				<span class="text-muted">{{ post.createdAt | ru_strftime_inflected:"%d %B %Y" }} г.</span> <br>

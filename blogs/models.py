@@ -16,6 +16,9 @@ class Post (models.Model):
 		else: 
 			return reverse('blogs.views.id', args=[self.id])
 
+	def text_cleaned(self):
+		return self.text.replace("&nbsp;", "")
+
 	def __unicode__(self):
 		return self.title	
 		

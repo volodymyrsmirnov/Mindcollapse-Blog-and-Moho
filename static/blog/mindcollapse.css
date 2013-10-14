@@ -10,6 +10,8 @@
   .mindcollapse .header .navbar-brand {
     padding-left: 0px;
     color: #111; }
+  .mindcollapse .header .navbar-toggle {
+    margin-right: 0px; }
   .mindcollapse .header ul li:last-child a {
     padding-right: 0px; }
 .mindcollapse .archive li {
