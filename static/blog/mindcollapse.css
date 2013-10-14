@@ -42,12 +42,5 @@
         clear: both; } }
   .mindcollapse article .content {
     text-align: justify; }
-    .mindcollapse article .content img {
-      border-radius: 5px;
-      border: 1px solid #dddddd; }
-    .mindcollapse article .content img.lazy {
-      width: 900px;
-      height: 400px;
-      background-color: #f7f7f9; }
   .mindcollapse article footer {
     font-style: italic; }

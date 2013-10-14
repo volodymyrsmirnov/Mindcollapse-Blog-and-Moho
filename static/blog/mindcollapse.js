@@ -1,4 +1,5 @@
 $(function(){
+	$(".content img").addClass("inm-responsive");
 
 	$(".social a").click(function(e){
 		e.preventDefault();
