@@ -1,0 +1,14 @@
+{% extends "blog/layout.html" %}
+
+{% load pytils_dt %}
+
+{% block content %}
+	<ol class="archive">
+		{% for post in posts %}
+			<li>
+				<span class="text-muted">{{ post.createdAt | ru_strftime_inflected:"%d %B %Y" }} г.</span> <br>
+				<a href="{% if post.slug %}{% url "blogs.views.slug" post.slug %}{% else %}{% url "blogs.views.id" post.id %}{% endif %}">{{ post.title }}</a>
+			</li>
+		{% endfor %}
+	</ol>
+{% endblock %}

@@ -60,22 +60,23 @@ def sitemap(request):
 	template_vars = {}
 	template_vars['posts'] = Post.objects.values('id', 'createdAt').order_by('-id').all()
 
-	return render_to_response (
-		'blog/sitemap.xml', 
-		template_vars, 
-		mimetype = 'application/xml'
-	)
+	return render_to_response ("blog/sitemap.xml", template_vars, mimetype="application/xml")
 
 def rss(request):
 	template_vars = {}
 	template_vars['posts'] = Post.objects.filter(visible=True).order_by('-id')[:7]
 
-	return render_to_response (
-		'blog/rss.xml', 
-		template_vars, 
-		context_instance = RequestContext(request), 
-		mimetype = 'application/xml'
-	)
+	return render_to_response ("blog/rss.xml", template_vars, mimetype="application/xml")
+
+def archive(request):
+	template_vars = {
+		"title": "Архив записей",
+		"archive": True,
+	}
+
+	template_vars["posts"] = Post.objects.values("id", "slug", "title", "createdAt").order_by("-id").all()
+
+	return render_to_response ("blog/archive.html", template_vars)
 	
 def id(request, id, blog_post=None):
 	template_vars = {}
@@ -83,68 +84,24 @@ def id(request, id, blog_post=None):
 	if not blog_post: 
 		blog_post = get_object_or_404(Post, pk=id)
 
-	template_vars['posts'] = [blog_post]
-	template_vars['og_post'] = blog_post
-	template_vars['title'] = blog_post.title
+	template_vars["post"] = blog_post
+	template_vars["title"] = blog_post.title
 
-	if blog_post.slug and not id == None:
-		return HttpResponsePermanentRedirect(reverse('blogs.views.slug', args=[blog_post.slug]))
+	if blog_post.slug and id != None:
+		return HttpResponsePermanentRedirect(reverse("blogs.views.slug", args=[blog_post.slug]))
 
-	return render_to_response (
-		'blog/posts.html', 
-		pimp_my_template(template_vars), 
-		context_instance = RequestContext(request)
-	)
+	return render_to_response ("blog/post.html", template_vars)
 	
-
 def slug(request, slug):
-	return id (
-		request = request,
-		blog_post = get_object_or_404(Post, slug=slug), 
-		id = None
-	)
-
-def tag(request, tag, page=1):
-	template_vars = {}
-	pagination = Paginator(Post.objects.filter(tags__slug=tag, visible=True).order_by('-id'), 5)
-		
-	try:
-		template_vars['current_page'] = pagination.page(page)
-	except EmptyPage: 
-		raise Http404
-
-	template_vars['posts'] = template_vars['current_page'].object_list
-	template_vars['pagination_url'] = '/blog/tag/{0}/page/'.format(tag)
-	template_vars['pagination'] = pagination
-	template_vars['page'] = page
-		
-	return render_to_response (
-		'blog/posts.html', 
-		pimp_my_template(template_vars), 
-		context_instance=RequestContext(request)
-	)
+	return id(request=request, blog_post=get_object_or_404(Post, slug=slug), id=None)
 
 def index(request, page=1):
-	template_vars = {}
-	pagination = Paginator(Post.objects.filter(visible=True).order_by('-id'), 5)
-		
-	try:
-		template_vars['current_page'] = pagination.page(page)
-	except EmptyPage: 
-		raise Http404
+	post = Post.objects.filter(visible=True).order_by("-id")[0]
 
-	template_vars['posts'] = template_vars['current_page'].object_list
-	template_vars['pagination_url'] = '/blog/page/'
-	template_vars['pagination'] = pagination
-	template_vars['page'] = page
+	if post.slug:
+		url = reverse("blogs.views.slug", args=[post.slug])
+	else:
+		url = reverse("blogs.views.id", args=[post.id])
+
+	return HttpResponseRedirect(url)
 	
-	return render_to_response (
-		'blog/posts.html', 
-		pimp_my_template(template_vars), 
-		context_instance=RequestContext(request)
-	)	
-
-def pimp_my_template(template):
-	template['randomMohos'] = Moho.objects.filter(visible=True).values('id', 'year', 'slug', 'title', 'imageURL').order_by('?')[:7]
-
-	return template

@@ -1,22 +1,30 @@
-<?xml version="1.0"?>
-<rss version="2.0">
-	<channel> 
-		<title>Блог mindcollapse.com</title>
-		<link>http://www.mindcollapse.com/blog/</link>
-		<description>Технологический блог о работе и мудаках</description>
-		<language>ru-ru</language> 
-		<lastBuildDate>{% now "r" %}</lastBuildDate>
-		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
-		{% for post in posts%}
-		<item>
-			<title><![CDATA[{{post.title|safe}}]]></title>
-			<link>http://www.mindcollapse.com{{post.url}}</link>
-			<guid>http://www.mindcollapse.com/blog/{{post.id}}.html</guid>
-			<description>
-				<![CDATA[<div>{{post.text|safe}}</div>]]>
-			</description>
-			<pubDate>{{post.createdAt|date:"r"}}</pubDate>
-		</item>
-		{% endfor %}
-	</channel> 
-</rss>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Блог mindcollapse.com</title>
+	<subtitle>Личный блог Владимира Смирнова</subtitle>
+
+	<link href="http://www.mindcollapse.com/blog.xml" rel="self" />
+    <link href="http://www.mindcollapse.com/blog/" />
+
+    <id>http://www.mindcollapse.com/blog.xml</id>
+
+    <author>
+		<name>Vladimir Smirnov</name>
+		<email>mail@mindcollapse.com</email>
+		<uri>http://www.mindcollapse.com/</uri>
+    </author>
+
+	<updated>{{ posts.0.createdAt | date:"r" }}</updated>
+
+	{% for post in posts %}
+		<entry>
+			<id>http://www.mindcollapse.com{{ post.url }}</id>
+			<updated>{{ post.createdAt | date:"r" }}</updated>
+			<title>{{ post.title }}</title>
+			<link rel="alternate" href="http://www.mindcollapse.com{{ post.url }}"/>
+			<content type="html">
+				{{ post.text }}
+			</content>
+		</entry>
+	{% endfor %}
+</feed>

@@ -1,0 +1,53 @@
+/* Blog styling */
+.mindcollapse .container {
+  max-width: 930px; }
+.mindcollapse a {
+  color: #2985e8; }
+.mindcollapse .header {
+  margin-top: 5px;
+  background-color: #ffffff;
+  border: 0px; }
+  .mindcollapse .header .navbar-brand {
+    padding-left: 0px;
+    color: #111; }
+  .mindcollapse .header ul li:last-child a {
+    padding-right: 0px; }
+.mindcollapse .archive li {
+  margin-bottom: 10px;
+  vertical-align: middle; }
+.mindcollapse article {
+  margin-top: 20px;
+  color: #111;
+  font-size: 16px;
+  font-family: Georgia, Times New Roman, serif; }
+  .mindcollapse article hr {
+    margin-top: 15px;
+    margin-bottom: 15px; }
+    .mindcollapse article hr.first {
+      margin-top: 10px; }
+  .mindcollapse article header {
+    line-height: 20px; }
+    .mindcollapse article header h1 {
+      font-size: 18px;
+      font-weight: normal;
+      margin: 0px; }
+    .mindcollapse article header .published {
+      text-align: right;
+      font-size: 14px;
+      cursor: pointer; }
+    @media (max-width: 767px) {
+      .mindcollapse article header .published {
+        margin-top: 15px;
+        float: left !important;
+        clear: both; } }
+  .mindcollapse article .content {
+    text-align: justify; }
+    .mindcollapse article .content img {
+      border-radius: 5px;
+      border: 1px solid #dddddd; }
+    .mindcollapse article .content img.lazy {
+      width: 900px;
+      height: 400px;
+      background-color: #f7f7f9; }
+  .mindcollapse article footer {
+    font-style: italic; }

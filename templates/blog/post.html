@@ -1,0 +1,24 @@
+{% extends "blog/layout.html" %}
+
+{% load pytils_dt %}
+
+{% block content %}
+
+<article id="post_{{ post.id }}" itemscope itemtype="http://schema.org/BlogPosting">
+	<header class="clearfix">
+		<h1 itemprop="name" class="pull-left">{{ post.title }}</h1>
+		<div class="published pull-right"><time itemprop="dateCreated" class="text-muted" pubdate title="{{ post.createdAt | distance_of_time }}" datetime="{{ post.createdAt | date:"Y-m-d" }}">{{ post.createdAt | ru_strftime_inflected:"%d %B %Y" }} г.</time></div>
+	</header>
+
+	<hr class="first">
+
+	<div itemprop="articleBody" class="content">{{ post.text | safe }}</div>
+
+	<hr>
+
+	<footer>
+		<p>Что делать, если вы все прочитали и вам понравилось? Можете посмотреть мои остальные статьи в <a href="">архиве</a> или поделиться радостью со своими воображаемыми друзьями в социальных сетях: <span class="social"><a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.mindcollapse.com{{post.url}}">фейсбук</a>, <a target="_blank" href="http://twitter.com/share?url=http://www.mindcollapse.com{{post.url}}&amp;text={{post.title|urlencode}}&amp;via=middlesizetit">твиттер</a>, <a target="_blank" href="http://vkontakte.ru/share.php?url=http://www.mindcollapse.com{{post.url}}">вконтакте</a></span>.</p>
+	</footer>
+</article>
+
+{% endblock %}

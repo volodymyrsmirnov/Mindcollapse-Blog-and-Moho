@@ -1,34 +1,34 @@
 from blogs.models import Post, Tag
 from django.contrib import admin
 
-class TagAdmin (admin.ModelAdmin):
-	save_on_top = True
-	list_per_page = 50
+# class TagAdmin (admin.ModelAdmin):
+# 	save_on_top = True
+# 	list_per_page = 50
 	
-	prepopulated_fields = {
-		"slug": ("name",)
-	}
+# 	prepopulated_fields = {
+# 		"slug": ("name",)
+# 	}
 	
-	def titlezed(obj):
-		return obj.name.title()
+# 	def titlezed(obj):
+# 		return obj.name.title()
 		
-	def countTags(obj):
-		return Post.objects.filter(tags__slug=obj.slug).count()
+# 	def countTags(obj):
+# 		return Post.objects.filter(tags__slug=obj.slug).count()
 			
-	titlezed.short_description = 'Name'
-	countTags.short_description = 'Attached to posts'
+# 	titlezed.short_description = 'Name'
+# 	countTags.short_description = 'Attached to posts'
 	
-	list_display = ('id', titlezed, countTags)
+# 	list_display = ('id', titlezed, countTags)
 	
-	search_fields = ['name']
+# 	search_fields = ['name']
 
 class PostAdmin(admin.ModelAdmin):
 	list_display = ('id', 'title', 'createdAt', 'visible')
 	list_filter = ('visible',)
 	
-	fields = ('title', 'slug', 'text', 'visible', 'createdAt', 'tags')
+	fields = ('title', 'slug', 'text', 'visible', 'createdAt')
 	
-	filter_horizontal = ['tags']
+	#filter_horizontal = ['tags']
 	
 	list_per_page = 50
 	save_on_top = True
@@ -51,4 +51,4 @@ class PostAdmin(admin.ModelAdmin):
 		)
 
 admin.site.register(Post, PostAdmin)
-admin.site.register(Tag, TagAdmin)
+# admin.site.register(Tag, TagAdmin)

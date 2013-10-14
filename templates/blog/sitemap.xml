@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% for post in posts%}
+{% for post in posts %}
 	<url>
-		<loc>http://www.mindcollapse.com/blog/{{post.id}}.html</loc>
-		<lastmod>{{post.createdAt|date:"Y-m-d"}}</lastmod>
+		<loc>http://www.mindcollapse.com/blog/{{ post.id }}.html</loc>
+		<lastmod>{{ post.createdAt | date:"Y-m-d" }}</lastmod>
 	</url>
 {% endfor %}
 </urlset> 

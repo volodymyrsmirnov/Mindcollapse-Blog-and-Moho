@@ -1,0 +1,95 @@
+/* Blog styling */
+.mindcollapse {
+	.container {
+		max-width: 930px;
+	}
+
+	a {
+		color: #2985e8;
+	}
+
+	.header {
+		margin-top: 5px;
+		background-color: #ffffff;
+		border: 0px;
+
+		.navbar-brand {
+			padding-left: 0px;
+			color: #111;
+		}
+
+		ul li:last-child a {
+			padding-right: 0px;
+		}
+	}
+
+	.archive {
+		li {
+			margin-bottom: 10px;
+			vertical-align: middle;
+		}
+	}
+
+	article {
+		margin-top: 20px;
+
+		color: #111;
+		font-size: 16px;
+		font-family: Georgia, Times New Roman, serif;
+
+		hr {
+			margin: {
+				top: 15px;
+				bottom: 15px;
+			};
+
+			&.first {
+				margin-top: 10px;
+			}
+		}
+
+		header {
+			line-height: 20px; 
+
+			h1 {
+				font-size: 18px;
+				font-weight: normal;
+				margin: 0px;
+			}
+
+			.published {
+				text-align: right;
+				font-size: 14px;
+				cursor: pointer;
+			}
+
+			@media (max-width: 767px) { 
+				.published {
+					margin-top: 15px;
+					float: left !important;
+					clear:both;
+				}
+			}
+		}
+
+		.content {
+			text-align: justify;
+
+			img {
+				border-radius: 5px;
+				border: 1px solid #dddddd;
+			}
+
+			img.lazy {
+				width: 900px;
+				height: 400px;
+				background-color: #f7f7f9;
+			}
+		}
+
+		footer {
+			font-style: italic;
+		}
+	}
+}
+
