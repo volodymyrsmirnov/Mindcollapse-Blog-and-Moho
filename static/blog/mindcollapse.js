@@ -1,4 +1,9 @@
 $(function(){
+	Hyphenator.run({
+		remoteloading: false,
+		useCSS3hyphenation: true,
+	});
+
 	$(".content img").addClass("img-responsive");
 
 	$(".social a").click(function(e){
