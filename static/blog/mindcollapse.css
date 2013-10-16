@@ -56,7 +56,7 @@
         clear: both; } }
   .mindcollapse .article .content {
     text-align: justify; }
-    .mindcollapse .article .content .img {
+    .mindcollapse .article .content img {
       display: block;
       height: auto;
       max-width: 100%; }
