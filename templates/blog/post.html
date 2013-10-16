@@ -9,14 +9,14 @@
 <article id="post_{{ post.id }}" itemscope itemtype="http://schema.org/BlogPosting">
 	<header class="clearfix">
 		<h1 itemprop="name" class="pull-left">{{ post.title }}</h1>
-		<div class="published pull-right"><time itemprop="dateCreated" class="text-muted" pubdate title="{{ post.createdAt | distance_of_time }}" datetime="{{ post.createdAt | date:"Y-m-d" }}">{{ post.createdAt | ru_strftime_inflected:"%d %B %Y" }} г.</time></div>
+		<div class="published pull-right"><time itemprop="dateCreated" class="text-muted" pubdate title="{{ post.createdAt | timesince }} тому назад" datetime="{{ post.createdAt | date:"Y-m-d" }}">{{ post.createdAt | ru_strftime_inflected:"%d %B %Y" }} г.</time></div>
 	</header>
 
 	<hr class="first">
 
 	<div itemprop="articleBody" class="content hyphenate">
 		{% cache 0 blogposts post.id %}
-			{{ post.text_cleaned | safe }}
+			{{ post.text_cleaned | safe  }}
 		{% endcache %}
 	</div>
 
