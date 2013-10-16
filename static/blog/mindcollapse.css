@@ -56,5 +56,9 @@
         clear: both; } }
   .mindcollapse .article .content {
     text-align: justify; }
+    .mindcollapse .article .content .img {
+      display: block;
+      height: auto;
+      max-width: 100%; }
   .mindcollapse .article .content_footer {
     font-style: italic; }

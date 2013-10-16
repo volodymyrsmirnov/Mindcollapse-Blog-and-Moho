@@ -93,6 +93,12 @@
 
         .content {
             text-align: justify;
+
+            .img {
+                display: block;
+                height: auto;
+                max-width: 100%;
+            }
         }
 
         .content_footer {
