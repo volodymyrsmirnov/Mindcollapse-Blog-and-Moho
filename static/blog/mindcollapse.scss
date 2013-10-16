@@ -39,7 +39,7 @@
         }
     }
 
-    article {
+    .article {
         margin-top: 20px;
 
         color: #111;
@@ -66,7 +66,7 @@
             }
         }
 
-        header {
+        .content_header {
             line-height: 20px; 
 
             h1 {
@@ -94,7 +94,7 @@
             text-align: justify;
         }
 
-        footer {
+        .content_footer {
             font-style: italic;
         }
     }

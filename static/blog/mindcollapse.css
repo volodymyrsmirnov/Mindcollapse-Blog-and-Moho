@@ -20,7 +20,7 @@
 .mindcollapse .archive li {
   margin-bottom: 10px;
   vertical-align: middle; }
-.mindcollapse article {
+.mindcollapse .article {
   margin-top: 20px;
   color: #111;
   font-size: 16px;
@@ -33,27 +33,27 @@
       -o-hyphens: auto;
       hyphens: auto;
   }*/ }
-  .mindcollapse article hr {
+  .mindcollapse .article hr {
     margin-top: 15px;
     margin-bottom: 15px; }
-    .mindcollapse article hr.first {
+    .mindcollapse .article hr.first {
       margin-top: 10px; }
-  .mindcollapse article header {
+  .mindcollapse .article .content_header {
     line-height: 20px; }
-    .mindcollapse article header h1 {
+    .mindcollapse .article .content_header h1 {
       font-size: 18px;
       font-weight: normal;
       margin: 0px; }
-    .mindcollapse article header .published {
+    .mindcollapse .article .content_header .published {
       text-align: right;
       font-size: 14px;
       cursor: pointer; }
     @media (max-width: 767px) {
-      .mindcollapse article header .published {
+      .mindcollapse .article .content_header .published {
         margin-top: 15px;
         float: left !important;
         clear: both; } }
-  .mindcollapse article .content {
+  .mindcollapse .article .content {
     text-align: justify; }
-  .mindcollapse article footer {
+  .mindcollapse .article .content_footer {
     font-style: italic; }
