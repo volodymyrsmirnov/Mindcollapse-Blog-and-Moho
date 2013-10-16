@@ -15,7 +15,7 @@
 	<hr class="first">
 
 	<div itemprop="articleBody" class="content hyphenate">
-		{% cache 0 posts post.id %}
+		{% cache 0 blogposts post.id %}
 			{{ post.text_cleaned | safe }}
 		{% endcache %}
 	</div>

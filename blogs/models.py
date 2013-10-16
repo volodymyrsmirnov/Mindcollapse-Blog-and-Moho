@@ -38,7 +38,7 @@ class Tag(models.Model):
 def clear_template_cache(sender, **kwargs):
 	post = kwargs.get("instance")
 
-	key = make_template_fragment_key("posts", [post.id])
+	key = make_template_fragment_key("blogposts", [post.id])
 
 	if key:
 		cache.delete(key)

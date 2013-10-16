@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import urllib2
+
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, HttpResponsePermanentRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
@@ -51,7 +53,7 @@ def autosave_post(request):
 		return HttpResponse('save the post first')
 
 	autosave_post = get_object_or_404(Post, id=int(request.GET.get('id'))) 
-	autosave_post.text = request.POST.get('text')
+	autosave_post.text = urllib2.unquote(request.POST.get('text').encode('ascii'))
 	autosave_post.save()
 
 	return HttpResponse('updated successfully')
