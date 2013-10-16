@@ -42,7 +42,7 @@ def upload_file(request):
 
 	return HttpResponse (
 		dumps ({
-				'filelink': upload_destination.replace(settings.MEDIA_ROOT, '/media/')
+			'filelink': upload_destination.replace(settings.MEDIA_ROOT, '/media/')
 		})
 	)
 

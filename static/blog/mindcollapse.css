@@ -14,7 +14,8 @@
     padding-left: 0px;
     color: #111; }
   .mindcollapse .header .navbar-toggle {
-    margin-right: 0px; }
+    margin-right: 0px;
+    outline: none; }
   .mindcollapse .header ul li:last-child a {
     padding-right: 0px; }
 .mindcollapse .archive li {
