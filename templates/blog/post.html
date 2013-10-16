@@ -1,6 +1,8 @@
 {% extends "blog/layout.html" %}
 
+{% load cache %}
 {% load pytils_dt %}
+{% load softhyphen_tags %}
 
 {% block content %}
 
@@ -12,7 +14,11 @@
 
 	<hr class="first">
 
-	<div itemprop="articleBody" class="content hyphenate">{{ post.text_cleaned | safe }}</div>
+	<div itemprop="articleBody" class="content hyphenate">
+		{% cache 0 posts post.id %}
+			{{ post.text_cleaned | safe }}
+		{% endcache %}
+	</div>
 
 	<hr>
 
