@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+	{% load trim %}
+
 	<title>{{ title | default:"Блог @ mindcollapse.com" }}</title> 
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +12,23 @@
 	<meta name="yandex-verification" content="4b85f46617ab1114"> 
 	<meta name="y_key" content="04bed234d6a405cc"> 
 	<meta name="msvalidate.01" content="62188F55275960794DDFA698C3EA9F05">
+	<meta property="fb:admins" content="1405335117" />
 
     {% if post %}
     	<meta property="og:title" content="{{ post.title }}">
-    	<meta property="og:description" content="{{ post.text | striptags | truncatewords:50 }}">
+    	<meta property="og:description" content="{{ post.text | striptags | truncatewords:50 | trim }}">
     	<meta property="og:type" content="article">
     	<meta property="fb:admins" content="1405335117">
     	<meta property="og:site_name" content="mindcollapse.com">
     	<meta property="og:url" content="http://www.mindcollapse.com{% url "blogs.views.id" id=post.id %}">
+
+    	<meta name="description" content="{{ post.text | striptags | truncatewords:50 | trim }}">
+
+    	<meta name="twitter:card" content="summary">
+    	<meta name="twitter:site" content="@middlesizetit">
+    	<meta name="twitter:creator" content="@middlesizetit">
+    	<meta name="twitter:description" content="{{ post.text | striptags | truncatechars:200 | trim }}">
+    	<meta name="twitter:title" content="{{ post.title | truncatechars:70 }}">
     {% endif %}
 
 	<link rel="author" href="https://plus.google.com/110904145311662435301">
@@ -43,7 +54,7 @@
 <body class="mindcollapse">
 	<div class="container">
 
-		<nav class="header navbar navbar-default hidden-print" role="navigation">
+		<div class="header navbar navbar-default hidden-print" role="navigation">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".blogmenu">
 					<span class="icon-bar"></span>
@@ -63,14 +74,15 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a target="_blank" href="http://www.twitter.com/middlesizetit">Twitter</a></li>
+					<li><a target="_blank" href="https://github.com/mindcollapse">Github</a></li>
 					<li><a href="{% url "blogs.views.rss" %}">RSS</a></li>
 				</ul>
 			</div>
-		</nav>
+		</div>
 
 		{% block content %}{% endblock %}
 	</div>
-	
+
 	<!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter22151810 = new Ya.Metrika({id:22151810, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/22151810" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 	            
 </body>
